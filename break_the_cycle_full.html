@@ -2,8 +2,28 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
 <style>
+  @font-face {
+    font-family: 'Chillax';
+    src: url('Chillax-Regular.otf') format('opentype');
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: 'Chillax';
+    src: url('Chillax-Medium.otf') format('opentype');
+    font-weight: 500;
+  }
+  @font-face {
+    font-family: 'Chillax';
+    src: url('Chillax-Semibold.otf') format('opentype');
+    font-weight: 600;
+  }
+
   * { box-sizing: border-box; margin: 0; padding: 0; }
+
   body {
     background: #1a1a1a;
     display: flex;
@@ -11,108 +31,179 @@
     align-items: center;
     padding: 40px 20px;
     gap: 32px;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
+
+  /* ===== COVER ===== */
+  .cover-page {
+    width: 620px;
+    min-height: 820px;
+    background: #141414;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    padding: 80px;
+    position: relative;
+  }
+  .cover-accent {
+    width: 36px;
+    height: 3px;
+    background: #E8FF8D;
+    margin-bottom: 48px;
+  }
+  .cover-title {
+    font-family: 'Chillax', sans-serif;
+    font-weight: 600;
+    font-size: 82px;
+    color: #faf8f0;
+    letter-spacing: -3px;
+    line-height: 0.93;
+    flex: 1;
+  }
+  .cover-rule {
+    width: 40px;
+    height: 1px;
+    background: #333;
+    margin-bottom: 14px;
+    margin-top: 48px;
+  }
+  .cover-author {
+    font-family: 'Chillax', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    color: #faf8f0;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+  }
+  .cover-handle {
+    font-family: 'Chillax', sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    color: #555;
+    letter-spacing: 0.5px;
+  }
+
+  /* ===== BASE CREAM PAGE ===== */
   .page {
     width: 620px;
     min-height: 820px;
     padding: 70px 80px;
-    background: #faf9f6;
+    background: #faf8f0;
     border-radius: 4px;
     position: relative;
   }
-  .page.dark {
-    background: #141414;
+  .page.dark { background: #141414; }
+
+  /* ===== TOC ===== */
+  .toc-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 58px;
+    color: #2a2420;
+    margin-bottom: 44px;
+    line-height: 1;
   }
-  .top-rule {
-    width: 36px;
-    height: 2px;
-    background: #1a1a1a;
-    margin-bottom: 28px;
+  .toc-list { list-style: none; }
+  .toc-item {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    padding: 11px 0;
+    border-bottom: 0.5px solid #e0d8cc;
   }
-  .top-rule.light {
-    background: #E8FF8D;
+  .toc-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 20px;
+    color: #C1704A;
+    min-width: 18px;
+    text-align: right;
+    flex-shrink: 0;
   }
-  .chapter-label {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 1.8px;
-    text-transform: uppercase;
-    color: #999;
-    margin-bottom: 8px;
-  }
-  .chapter-label.light {
-    color: #666;
-  }
-  .chapter-title {
-    font-size: 28px;
+  .toc-chapter {
+    font-family: 'Chillax', sans-serif;
     font-weight: 500;
-    color: #141414;
-    letter-spacing: -0.5px;
-    margin-bottom: 38px;
-    line-height: 1.2;
-  }
-  .chapter-title.light {
-    color: #faf9f6;
-  }
-  .section-heading {
-    font-size: 10px;
-    font-weight: 700;
+    font-size: 10.5px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: #141414;
-    margin-top: 30px;
-    margin-bottom: 14px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid #e0e0d8;
+    color: #2a2420;
   }
-  .body-text {
-    font-size: 13.5px;
-    color: #1a1a1a;
-    line-height: 1.95;
-    margin-bottom: 16px;
-  }
-  .body-text.light {
-    color: #d4d4cc;
-  }
-  .pull {
-    font-size: 16px;
-    font-weight: 500;
-    color: #141414;
-    line-height: 1.6;
-    border-left: 3px solid #E8FF8D;
-    padding: 4px 0 4px 18px;
-    margin: 32px 0;
-  }
-  .pull.light {
-    color: #faf9f6;
-  }
-  .anchor-line {
-    font-size: 12px;
-    font-weight: 600;
-    font-style: italic;
-    color: #888;
-    margin-top: 36px;
-    padding-top: 20px;
-    border-top: 0.5px solid #e0e0d8;
-    letter-spacing: 0.2px;
-  }
-  .page-number {
-    position: absolute;
-    bottom: 28px;
-    left: 0;
-    right: 0;
-    text-align: center;
-    font-size: 10px;
-    color: #bbb;
-    letter-spacing: 0.8px;
-  }
-  .page-number.light {
-    color: #555;
-  }
-  em { font-style: italic; }
+  .toc-item.no-num .toc-num { visibility: hidden; }
 
-  /* Transition page styles */
+  /* ===== QUICK NOTE ===== */
+  .qn-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 58px;
+    color: #2a2420;
+    margin-bottom: 22px;
+    line-height: 1;
+  }
+  .qn-photo {
+    float: right;
+    width: 172px;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin: 0 0 14px 22px;
+  }
+  .qn-subhead {
+    font-family: 'Chillax', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #2a2420;
+    margin-bottom: 14px;
+  }
+
+  /* ===== CHAPTER CIRCLE BREAK PAGE ===== */
+  .chapter-circle-page {
+    width: 620px;
+    min-height: 820px;
+    background: #141414;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .cc-accent {
+    position: absolute;
+    top: 60px;
+    left: 80px;
+    width: 36px;
+    height: 3px;
+    background: #E8FF8D;
+  }
+  .cc-circle {
+    width: 260px;
+    height: 260px;
+    background: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 36px;
+  }
+  .cc-number {
+    font-family: 'Chillax', sans-serif;
+    font-weight: 600;
+    font-size: 110px;
+    color: #141414;
+    line-height: 1;
+    letter-spacing: -4px;
+  }
+  .cc-title {
+    font-family: 'Chillax', sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    color: #faf8f0;
+    text-align: center;
+    max-width: 340px;
+    line-height: 1.35;
+  }
+
+  /* ===== TRANSITION PAGE ===== */
   .transition-page {
     width: 620px;
     min-height: 820px;
@@ -132,17 +223,19 @@
     margin-bottom: 32px;
   }
   .transition-label {
+    font-family: 'Chillax', sans-serif;
     font-size: 10px;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #555;
     margin-bottom: 20px;
   }
   .transition-title {
+    font-family: 'Chillax', sans-serif;
     font-size: 38px;
     font-weight: 500;
-    color: #faf9f6;
+    color: #faf8f0;
     letter-spacing: -1px;
     line-height: 1.15;
     margin-bottom: 28px;
@@ -153,22 +246,110 @@
     line-height: 1.8;
     max-width: 380px;
   }
-  .transition-number {
-    position: absolute;
-    bottom: 48px;
-    right: 80px;
-    font-size: 96px;
-    font-weight: 700;
-    color: #222;
-    letter-spacing: -4px;
-    line-height: 1;
+
+  /* ===== CONTENT ELEMENTS ===== */
+  .top-rule {
+    width: 36px;
+    height: 2px;
+    background: #2a2420;
+    margin-bottom: 28px;
+  }
+  .top-rule.light { background: #E8FF8D; }
+
+  .chapter-label {
+    font-family: 'Chillax', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: #C1704A;
+    margin-bottom: 8px;
+  }
+  .chapter-label.light { color: #666; }
+
+  .chapter-title {
+    font-family: 'Chillax', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #2a2420;
+    letter-spacing: -0.5px;
+    margin-bottom: 38px;
+    line-height: 1.2;
+  }
+  .chapter-title.light { color: #faf8f0; }
+
+  .section-heading {
+    font-family: 'Chillax', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #2a2420;
+    margin-top: 30px;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #C1704A;
   }
 
-  /* Closing / dark page */
-  .closing-title {
-    font-size: 28px;
+  .body-text {
+    font-size: 13.5px;
+    color: #2a2420;
+    line-height: 1.95;
+    margin-bottom: 16px;
+  }
+  .body-text.light { color: #d4d4cc; }
+
+  .pull {
+    font-family: 'Chillax', sans-serif;
+    font-size: 16px;
     font-weight: 500;
-    color: #faf9f6;
+    color: #2a2420;
+    line-height: 1.6;
+    border-left: 3px solid #C1704A;
+    padding: 4px 0 4px 18px;
+    margin: 32px 0;
+  }
+  .pull.light { color: #faf8f0; }
+
+  .anchor-line {
+    font-size: 12px;
+    font-weight: 600;
+    font-style: italic;
+    color: #C1704A;
+    margin-top: 36px;
+    padding-top: 20px;
+    border-top: 0.5px solid #d4c9b8;
+    letter-spacing: 0.2px;
+  }
+
+  .page-number {
+    position: absolute;
+    bottom: 28px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 10px;
+    color: #aaa;
+    letter-spacing: 0.8px;
+    font-family: 'Chillax', sans-serif;
+  }
+  .page-number.light { color: #555; }
+
+  .chapter-icon {
+    display: flex;
+    justify-content: center;
+    margin-top: 28px;
+    margin-bottom: 4px;
+  }
+
+  em { font-style: italic; }
+
+  /* ===== CLOSING ===== */
+  .closing-title {
+    font-family: 'Chillax', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #faf8f0;
     letter-spacing: -0.5px;
     margin-bottom: 38px;
     line-height: 1.2;
@@ -180,15 +361,17 @@
     margin-bottom: 16px;
   }
   .closing-pull {
+    font-family: 'Chillax', sans-serif;
     font-size: 16px;
     font-weight: 500;
-    color: #faf9f6;
+    color: #faf8f0;
     line-height: 1.6;
     border-left: 3px solid #E8FF8D;
     padding: 4px 0 4px 18px;
     margin: 32px 0;
   }
   .closing-label {
+    font-family: 'Chillax', sans-serif;
     font-size: 10px;
     font-weight: 600;
     letter-spacing: 1.8px;
@@ -203,19 +386,18 @@
     padding-top: 20px;
     border-top: 0.5px solid #2a2a2a;
   }
-  .sig span {
-    color: #E8FF8D;
-  }
+  .sig span { color: #E8FF8D; }
 
-  /* Reflection page */
+  /* ===== REFLECTION ===== */
   .prompt-block {
     margin-bottom: 28px;
     padding: 20px 22px;
     background: #fff;
     border-radius: 4px;
-    border-left: 3px solid #E8FF8D;
+    border-left: 3px solid #C1704A;
   }
   .prompt-number {
+    font-family: 'Chillax', sans-serif;
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 1.5px;
@@ -242,6 +424,7 @@
     border-radius: 4px;
   }
   .converso-label {
+    font-family: 'Chillax', sans-serif;
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 1.5px;
@@ -259,76 +442,129 @@
     color: #555;
     margin-top: 24px;
   }
-  .converso-handle span {
-    color: #E8FF8D;
-  }
+  .converso-handle span { color: #E8FF8D; }
 </style>
 </head>
 <body>
 
 
-<!-- ========== PAGE 5: TRANSITION ========== -->
+<!-- ========== COVER (1) ========== -->
+<div class="cover-page">
+  <div class="cover-accent"></div>
+  <div class="cover-title">BREAK<br>THE<br>CYCLE</div>
+  <div class="cover-rule"></div>
+  <div class="cover-author">Avery Hubert</div>
+  <div class="cover-handle">@notAveryHubert</div>
+</div>
+
+
+<!-- ========== TABLE OF CONTENTS (2) ========== -->
+<div class="page">
+  <div class="toc-title">Contents</div>
+  <ul class="toc-list">
+    <li class="toc-item no-num">
+      <span class="toc-num">—</span>
+      <span class="toc-chapter">A note before we begin</span>
+    </li>
+    <li class="toc-item no-num">
+      <span class="toc-num">—</span>
+      <span class="toc-chapter">Introduction: Why this keeps happening</span>
+    </li>
+    <li class="toc-item">
+      <span class="toc-num">1</span>
+      <span class="toc-chapter">What actually happened to you</span>
+    </li>
+    <li class="toc-item">
+      <span class="toc-num">2</span>
+      <span class="toc-chapter">Why you still feel stuck</span>
+    </li>
+    <li class="toc-item">
+      <span class="toc-num">3</span>
+      <span class="toc-chapter">The patterns you keep repeating</span>
+    </li>
+    <li class="toc-item">
+      <span class="toc-num">4</span>
+      <span class="toc-chapter">What this did to you</span>
+    </li>
+    <li class="toc-item">
+      <span class="toc-num">5</span>
+      <span class="toc-chapter">How to detach</span>
+    </li>
+    <li class="toc-item">
+      <span class="toc-num">6</span>
+      <span class="toc-chapter">Rebuilding yourself</span>
+    </li>
+    <li class="toc-item">
+      <span class="toc-num">7</span>
+      <span class="toc-chapter">Moving forward without repeating it</span>
+    </li>
+  </ul>
+  <div class="page-number">2</div>
+</div>
+
+
+<!-- ========== QUICK NOTE (3) ========== -->
+<div class="page">
+  <div class="qn-title">Quick note</div>
+  <img class="qn-photo" src="Photo%20Apr%2017%202026%2C%208%2036%2041%20AM.jpg" alt="Avery Hubert">
+  <p class="qn-subhead">Before we start:</p>
+  <p class="body-text">I want to start this off by saying that I am not a licensed therapist, and I won't pretend to be. I would also like to point out that I was diagnosed with ADHD.</p>
+  <p class="body-text">For me, that means I cannot, for the life of me, focus on anything I don't care about. But what that also means is that when I do care about something, it's extremely easy and honestly enjoyable for me to lose myself and dive deep into it.</p>
+  <p class="body-text">One thing I care deeply about happens to be people. And in turn, psychology. And I believe that deep love for people, combined with my blunt, no-sugar-coating way of speaking, is the reason I have amassed a large following in such a relatively short period of time.</p>
+  <p class="body-text">However, I want to point out a simple yet powerful metaphor: bamboo can spend years growing its roots beneath the surface before you ever see any progress. But when the time comes, it can shoot up multiple feet in a single day.</p>
+  <div class="page-number">3</div>
+</div>
+
+
+<!-- ========== QUICK NOTE CONTINUED (4) ========== -->
+<div class="page">
+  <div class="qn-title">Continued</div>
+  <p class="body-text">What I mean is that what you are about to read comes from years of studying psychology, many books read, and most importantly, a culmination of my own life experiences, as well as the experiences of friends and family who have trusted me to help them in their time of need.</p>
+  <p class="body-text">I know what it feels like to have loved, to have lost, to have been manipulated, to constantly question your decisions and even your sanity after toxic relationships.</p>
+  <p class="body-text">The point of this guide is not to diagnose you, but to be a guiding light, no matter where you are on your healing journey.</p>
+  <p class="body-text">I genuinely hope you enjoy it, or at the very least, find it valuable.</p>
+  <p class="body-text">Thank you for placing your trust in me.</p>
+  <div class="page-number">4</div>
+</div>
+
+
+<!-- ========== THE CHAPTERS AHEAD (5) ========== -->
 <div class="transition-page">
   <div class="transition-accent"></div>
   <div class="transition-label">Where it begins</div>
   <div class="transition-title">The chapters<br>ahead</div>
   <div class="transition-sub">Each chapter builds on the last. Read them in order if you can. By the end, you will not just understand what happened. You will know what to do about it.</div>
-  <div class="transition-number">01</div>
   <div class="page-number light">5</div>
 </div>
 
 
-<!-- ========== CHAPTER 1 ========== -->
-<!-- Page 6 -->
+<!-- ========== CHAPTER 1 BREAK (6) ========== -->
+<div class="chapter-circle-page">
+  <div class="cc-accent"></div>
+  <div class="cc-circle"><span class="cc-number">1</span></div>
+  <div class="cc-title">What actually happened to you</div>
+  <div class="page-number light">6</div>
+</div>
+
+
+<!-- ========== CHAPTER 1 CONTENT ========== -->
+<!-- Page 7 -->
 <div class="page">
   <div class="top-rule"></div>
   <div class="chapter-label">Chapter 01</div>
   <h2 class="chapter-title">What actually happened to you</h2>
 
   <p class="body-text">Most people enter a toxic relationship without realizing it. That is not naivety. That is by design.</p>
-
   <p class="body-text">It rarely starts with red flags. It starts with someone who makes you feel more seen, more understood, more chosen than you have in a long time. They remember small details. They make you feel like you finally found somebody who actually gets you.</p>
-
   <p class="body-text">And then, slowly, things shift.</p>
-
   <p class="body-text">The warmth becomes inconsistent. The person who once made you feel so certain of yourself starts making you question everything. And because the change happened gradually, you barely noticed it until you were already deep in it.</p>
 
   <div class="section-heading">It didn't feel abusive at first</div>
 
   <p class="body-text">Emotional abuse rarely looks like what we imagine it looks like. There is no single obvious moment you can point to. No clean incident that makes everything clear.</p>
-
   <p class="body-text">Instead it looks like this. You bring something up that hurt you, and somehow by the end of the conversation you are the one apologizing. They say something cutting and when you react, you are told you are too sensitive. You start to feel like your emotions are always slightly too much, or slightly off, or just wrong.</p>
-
   <p class="body-text">None of that feels like abuse when you are living inside it. It just feels like a rough patch. It just feels like you need to communicate better. It just feels like you need to try a little harder.</p>
-
   <p class="body-text">That confusion is not a coincidence. It is a feature of the pattern, not a flaw in your perception.</p>
-
-  <div class="page-number">6</div>
-</div>
-
-<!-- Page 7 -->
-<div class="page">
-  <div class="top-rule"></div>
-
-  <div class="section-heading">The push and pull cycle</div>
-
-  <p class="body-text">One of the most disorienting parts of these relationships is not the bad moments. It is the good ones.</p>
-
-  <p class="body-text">Because in between the coldness and the criticism, there are moments that remind you of the beginning. A good day. A kind gesture. A version of them that makes you believe things are finally turning around. And that version feels so real that you hold onto it.</p>
-
-  <p class="body-text">This is called intermittent reinforcement, and it is one of the most powerful psychological hooks that exists.</p>
-
-  <p class="body-text">When reward is unpredictable, we become more attached to it, not less. Think about a slot machine. It does not pay out every time. But because it occasionally does, people keep pulling the lever. Unpredictable affection works exactly the same way. You are not chasing the person. You are chasing the feeling they gave you in those good moments, and your brain is convinced that if you just do the right thing, that feeling will come back for good.</p>
-
-  <div class="pull">It was not random. It was a pattern. And patterns can be identified, understood, and broken.</div>
-
-  <div class="section-heading">Why your body knew before your mind did</div>
-
-  <p class="body-text">There is a good chance that at some point in that relationship, you felt something was off before you could explain it. A knot in your stomach before they came home. The way you tensed up when you saw their name on your phone. The relief you felt on the days they were in a good mood, and what that relief quietly revealed about the rest of the time.</p>
-
-  <p class="body-text">Your body was tracking everything long before your mind was willing to accept it. That is not weakness. That is your nervous system doing exactly what it is designed to do.</p>
-
-  <p class="body-text">The problem is that when you override those signals enough times, you stop hearing them clearly. You start second-guessing your own gut. And that disconnection is one of the most lasting things a relationship like this leaves behind.</p>
 
   <div class="page-number">7</div>
 </div>
@@ -337,65 +573,93 @@
 <div class="page">
   <div class="top-rule"></div>
 
-  <div class="section-heading">Why it felt like addiction</div>
+  <div class="section-heading">The push and pull cycle</div>
 
-  <p class="body-text">Here is something that does not get talked about enough. The love you felt in that relationship was real. The attachment was real. The pain of losing it is real. None of that is up for debate.</p>
+  <p class="body-text">One of the most disorienting parts of these relationships is not the bad moments. It is the good ones.</p>
+  <p class="body-text">Because in between the coldness and the criticism, there are moments that remind you of the beginning. A good day. A kind gesture. A version of them that makes you believe things are finally turning around. And that version feels so real that you hold onto it.</p>
+  <p class="body-text">This is called intermittent reinforcement, and it is one of the most powerful psychological hooks that exists.</p>
+  <p class="body-text">When reward is unpredictable, we become more attached to it, not less. Think about a slot machine. It does not pay out every time. But because it occasionally does, people keep pulling the lever. Unpredictable affection works exactly the same way. You are not chasing the person. You are chasing the feeling they gave you in those good moments, and your brain is convinced that if you just do the right thing, that feeling will come back for good.</p>
 
-  <p class="body-text">But what also happened is that the constant cycle of tension and relief, distance and closeness, hurt and repair created a loop in your brain that functions very similarly to addiction. Every time things got good again after a hard stretch, your brain released dopamine. Every time they pulled away, you experienced something that felt close to withdrawal.</p>
+  <div class="pull">It was not random. It was a pattern. And patterns can be identified, understood, and broken.</div>
 
-  <p class="body-text">That is why you kept going back. That is why even now, part of you still misses it. You were not just attached to a person. You were attached to a cycle your brain had learned to crave.</p>
+  <div class="section-heading">Why your body knew before your mind did</div>
 
-  <p class="body-text">Understanding that changes things. Because you can stop blaming yourself for struggling to walk away from something your own nervous system was chemically wired into.</p>
+  <p class="body-text">There is a good chance that at some point in that relationship, you felt something was off before you could explain it. A knot in your stomach before they came home. The way you tensed up when you saw their name on your phone. The relief you felt on the days they were in a good mood, and what that relief quietly revealed about the rest of the time.</p>
+  <p class="body-text">Your body was tracking everything long before your mind was willing to accept it. That is not weakness. That is your nervous system doing exactly what it is designed to do.</p>
+  <p class="body-text">The problem is that when you override those signals enough times, you stop hearing them clearly. You start second-guessing your own gut. And that disconnection is one of the most lasting things a relationship like this leaves behind.</p>
 
-  <p class="body-text">You were not weak. You were not stupid. You were not blind.</p>
-
-  <p class="body-text">You were caught in a pattern built to keep you exactly where you were.</p>
-
-  <p class="body-text">And now you can see it for what it actually was. That matters more than most people realize. Because you cannot start breaking a cycle you do not understand.</p>
-
-  <p class="body-text">You just took the first step.</p>
-
-  <div class="anchor-line">"It was not random. It was a pattern."</div>
   <div class="page-number">8</div>
 </div>
 
-
-<!-- ========== CHAPTER 2 ========== -->
 <!-- Page 9 -->
+<div class="page">
+  <div class="top-rule"></div>
+
+  <div class="section-heading">Why it felt like addiction</div>
+
+  <p class="body-text">Here is something that does not get talked about enough. The love you felt in that relationship was real. The attachment was real. The pain of losing it is real. None of that is up for debate.</p>
+  <p class="body-text">But what also happened is that the constant cycle of tension and relief, distance and closeness, hurt and repair created a loop in your brain that functions very similarly to addiction. Every time things got good again after a hard stretch, your brain released dopamine. Every time they pulled away, you experienced something that felt close to withdrawal.</p>
+  <p class="body-text">That is why you kept going back. That is why even now, part of you still misses it. You were not just attached to a person. You were attached to a cycle your brain had learned to crave.</p>
+  <p class="body-text">Understanding that changes things. Because you can stop blaming yourself for struggling to walk away from something your own nervous system was chemically wired into.</p>
+  <p class="body-text">You were not weak. You were not stupid. You were not blind.</p>
+  <p class="body-text">You were caught in a pattern built to keep you exactly where you were.</p>
+  <p class="body-text">And now you can see it for what it actually was. That matters more than most people realize. Because you cannot start breaking a cycle you do not understand.</p>
+  <p class="body-text">You just took the first step.</p>
+
+  <div class="chapter-icon">
+    <!-- Broken chain -->
+    <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="4" y="17" width="20" height="11" rx="5.5" stroke="#C1704A" stroke-width="1.8"/>
+      <rect x="28" y="24" width="20" height="11" rx="5.5" stroke="#C1704A" stroke-width="1.8"/>
+      <line x1="23" y1="14" x2="27" y2="36" stroke="#faf8f0" stroke-width="3.5"/>
+      <line x1="22" y1="19" x2="25" y2="14" stroke="#C1704A" stroke-width="1.6" stroke-linecap="round"/>
+      <line x1="27" y1="33" x2="30" y2="28" stroke="#C1704A" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+  </div>
+
+  <div class="anchor-line">"It was not random. It was a pattern."</div>
+  <div class="page-number">9</div>
+</div>
+
+
+<!-- ========== CHAPTER 2 BREAK (10) ========== -->
+<div class="chapter-circle-page">
+  <div class="cc-accent"></div>
+  <div class="cc-circle"><span class="cc-number">2</span></div>
+  <div class="cc-title">Why you still feel stuck</div>
+  <div class="page-number light">10</div>
+</div>
+
+
+<!-- ========== CHAPTER 2 CONTENT ========== -->
+<!-- Page 11 -->
 <div class="page">
   <div class="top-rule"></div>
   <div class="chapter-label">Chapter 02</div>
   <h2 class="chapter-title">Why you still feel stuck</h2>
 
   <p class="body-text">A lot of people assume that once a relationship ends, the healing starts automatically. Like clarity is supposed to arrive the moment you walk out the door and carry you the rest of the way.</p>
-
   <p class="body-text">It does not work like that.</p>
-
   <p class="body-text">You can know, without any doubt, that what you were in was unhealthy. You can see the manipulation clearly. You can feel grateful to be out of it. And still find yourself missing them at midnight. Still find yourself checking their profile. Still find yourself replaying conversations trying to find the moment everything went wrong.</p>
-
   <p class="body-text">That is not failure. That is not weakness. That is a trauma bond. And until you understand what that actually is, you will keep blaming yourself for something that has a very real explanation.</p>
 
   <div class="section-heading">What a trauma bond actually is</div>
 
   <p class="body-text">A trauma bond is not the same as love, though it can feel identical from the inside.</p>
-
   <p class="body-text">It is a psychological attachment that forms specifically under conditions of inconsistency and fear. When someone alternates between making you feel safe and making you feel threatened, your nervous system bonds to them in a way that is extremely hard to break. Not because you are weak. Because that is what nervous systems do under those conditions. It is survival biology.</p>
-
   <p class="body-text">This is also why trauma bonds are often stronger than the bonds formed in healthy relationships. The intensity of the highs and the lows creates a depth of attachment that calm, consistent love rarely produces. Which is exactly why leaving feels so much harder than it should.</p>
 
-  <div class="page-number">9</div>
+  <div class="page-number">11</div>
 </div>
 
-<!-- Page 10 -->
+<!-- Page 12 -->
 <div class="page">
   <div class="top-rule"></div>
 
   <div class="section-heading">Missing them versus missing relief</div>
 
   <p class="body-text">Here is a reframe that might change the way you see things.</p>
-
   <p class="body-text">A lot of the time, what you are missing is not actually them. It is the relief they provided. The high after the tension broke. The warmth after the coldness. The version of them from the very beginning, before things got complicated. You are grieving something that felt real, even if the relationship itself was not safe.</p>
-
   <p class="body-text">That distinction matters because if you think you miss the person, you will spend your energy trying to get over them. But if you understand that you miss a feeling, you can start asking a more useful question: how do I create that feeling of safety and warmth in my life without needing it to come from them?</p>
 
   <div class="pull">You are not weak for still feeling this. You were conditioned. There is a significant difference between the two.</div>
@@ -403,57 +667,8 @@
   <div class="section-heading">Why clarity does not automatically create detachment</div>
 
   <p class="body-text">Your mind and your nervous system heal on completely different timelines. Your mind can reach clarity fast. It can connect the dots, identify the patterns, and understand exactly what happened. Your nervous system, on the other hand, does not care about logic. It learns through experience and repetition, not insight.</p>
-
   <p class="body-text">So even after you intellectually understand everything that happened, your body may still be running the old programming. Still scanning for their approval. Still bracing for conflict. Still craving the relief that used to follow the tension.</p>
-
   <p class="body-text">That lag is not a sign that you are not healing. It is just how nervous systems work. They need time and new experiences to catch up to what your mind already knows.</p>
-
-  <div class="page-number">10</div>
-</div>
-
-<!-- Page 11 -->
-<div class="page">
-  <div class="top-rule"></div>
-
-  <div class="section-heading">The shame that keeps you stuck</div>
-
-  <p class="body-text">One of the most underrated reasons people stay stuck after these relationships is shame.</p>
-
-  <p class="body-text">Shame about how long they stayed. Shame about going back after they said they would not. Shame about still caring. Shame about not seeing it sooner. That shame is heavy, and it tends to make people hide instead of heal. You cannot process something you are too embarrassed to look at directly.</p>
-
-  <p class="body-text">So if you are carrying any of that, I want you to hear this clearly. There is nothing to be ashamed of. The fact that you are hard to leave says everything about the pattern that was used on you and nothing about your intelligence or your worth. People who have never experienced this genuinely cannot understand the pull. And their judgment is not your problem to carry.</p>
-
-  <p class="body-text">What happened to you made sense given what you were dealing with. Every response you had was reasonable under the circumstances. And you are not the first person to have loved someone who made you question yourself, and you will not be the last.</p>
-
-  <p class="body-text">The difference now is that you understand it. And understanding is where everything starts to change.</p>
-
-  <div class="anchor-line">"You are not weak. You were conditioned."</div>
-  <div class="page-number">11</div>
-</div>
-
-
-<!-- ========== CHAPTER 3 ========== -->
-<!-- Page 12 -->
-<div class="page">
-  <div class="top-rule"></div>
-  <div class="chapter-label">Chapter 03</div>
-  <h2 class="chapter-title">The patterns you keep repeating</h2>
-
-  <p class="body-text">This is the chapter most people need the most and find the hardest to read.</p>
-
-  <p class="body-text">Because it is one thing to understand that you were in a toxic relationship. It is another thing entirely to look at your own patterns and ask why you ended up there, and why there is a chance you could end up there again if nothing changes.</p>
-
-  <p class="body-text">This is not about blame. This is about awareness. You cannot break a cycle you refuse to examine. And examining it is not the same as accepting fault for what someone else did to you.</p>
-
-  <div class="section-heading">Confusing intensity for love</div>
-
-  <p class="body-text">One of the most common patterns in people who find themselves in toxic relationships repeatedly is this: they have learned to read intensity as love.</p>
-
-  <p class="body-text">The obsessive attention at the beginning. The constant communication. The feeling that this person chose you above everyone else. The passion and the drama and the highs and the lows. All of it reads as proof that the connection is deep and real.</p>
-
-  <p class="body-text">But intensity is not the same as depth. And passion is not the same as love. A relationship can feel like the most electric thing you have ever experienced and still be the worst thing for you. The nervous system does not know the difference between excitement and anxiety. They produce similar sensations. Which means that what feels like chemistry might actually be your body recognizing a familiar kind of instability.</p>
-
-  <p class="body-text">Healthy love does not spike your nervous system. It regulates it. And if you have never experienced that, calm can feel like a red flag when it is actually the thing you need most.</p>
 
   <div class="page-number">12</div>
 </div>
@@ -462,74 +677,52 @@
 <div class="page">
   <div class="top-rule"></div>
 
-  <div class="section-heading">Falling for potential instead of reality</div>
+  <div class="section-heading">The shame that keeps you stuck</div>
 
-  <p class="body-text">Another pattern worth looking at honestly: staying for who someone could be rather than who they actually are.</p>
+  <p class="body-text">One of the most underrated reasons people stay stuck after these relationships is shame.</p>
+  <p class="body-text">Shame about how long they stayed. Shame about going back after they said they would not. Shame about still caring. Shame about not seeing it sooner. That shame is heavy, and it tends to make people hide instead of heal. You cannot process something you are too embarrassed to look at directly.</p>
+  <p class="body-text">So if you are carrying any of that, I want you to hear this clearly. There is nothing to be ashamed of. The fact that you are hard to leave says everything about the pattern that was used on you and nothing about your intelligence or your worth. People who have never experienced this genuinely cannot understand the pull. And their judgment is not your problem to carry.</p>
+  <p class="body-text">What happened to you made sense given what you were dealing with. Every response you had was reasonable under the circumstances. And you are not the first person to have loved someone who made you question yourself, and you will not be the last.</p>
+  <p class="body-text">The difference now is that you understand it. And understanding is where everything starts to change.</p>
 
-  <p class="body-text">You see the version of them from the beginning, or the version they show you in the good moments, and you convince yourself that that is the real them. That the difficult behavior is the exception, not the pattern. That if you just love them right, or say the right thing, or give it a little more time, that version will become permanent.</p>
+  <div class="chapter-icon">
+    <!-- Tangled loop -->
+    <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M26 8 C38 8 44 16 40 24 C36 32 24 34 18 28 C12 22 14 12 22 10 C30 8 38 14 36 22 C34 30 24 34 16 30 C8 26 8 16 16 12" stroke="#C1704A" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+    </svg>
+  </div>
 
-  <p class="body-text">It is a form of hope that keeps you locked in. Because you are not responding to the person in front of you. You are responding to the person you believe they are capable of becoming. And people will not change because you believe in them hard enough. They change because they decide to. Those are two very different things.</p>
-
-  <div class="section-heading">Over-giving as a way to feel safe</div>
-
-  <p class="body-text">A lot of people in these relationships become over-givers. They give more time, more energy, more patience, more understanding than is reasonable. And often it comes from a place of trying to create stability. If I do enough, maybe things will stay good. If I am low-maintenance enough, maybe they will not pull away.</p>
-
-  <p class="body-text">The over-giving is not generosity. It is anxiety wearing the mask of generosity. It is an attempt to control an environment that feels unpredictable by making yourself as easy and agreeable as possible.</p>
-
-  <p class="body-text">The problem is that it teaches people exactly how much they can take from you. And it leaves you completely depleted, wondering why you gave everything and still lost.</p>
-
-  <div class="pull">The pattern is bigger than one person. It will follow you into the next relationship until you see it clearly.</div>
-
+  <div class="anchor-line">"You are not weak. You were conditioned."</div>
   <div class="page-number">13</div>
 </div>
 
-<!-- Page 14 -->
-<div class="page">
-  <div class="top-rule"></div>
 
-  <div class="section-heading">Staying too long</div>
-
-  <p class="body-text">Most people in these situations stay longer than they planned to. Sometimes much longer. And they spend a lot of time afterward trying to understand why.</p>
-
-  <p class="body-text">Part of it is the trauma bond we talked about. Part of it is hope. Part of it is that leaving feels like admitting defeat, or like losing the investment of time and emotion you have already put in. But a big part of it is also this: you keep waiting for the beginning to come back. For the person they were in those first months to reappear and make all of it worth it. And that wait can consume years.</p>
-
-  <p class="body-text">The hard truth is that the beginning was not a preview of who they are. In many cases, it was a performance. And waiting for it to return is like waiting for an actor to stay in character offstage. It is not coming back because it was never the full picture to begin with.</p>
-
-  <div class="section-heading">The pull toward familiar chaos</div>
-
-  <p class="body-text">This one goes deeper than the relationship itself. For some people, a certain level of emotional chaos does not just feel familiar. It feels like home. Not because they want to be hurt, but because that is the emotional environment they learned to navigate first, often in childhood.</p>
-
-  <p class="body-text">When the nervous system grows up in an unpredictable environment, it calibrates to that level of stimulation. So when a relationship feels calm and stable and safe, something in you might actually read it as boring or lacking depth, even if logically you know it is good. You may even find yourself creating problems that do not exist because the quiet feels uncomfortable.</p>
-
-  <p class="body-text">Recognizing this is not about blame. It is about understanding where your nervous system learned what love is supposed to feel like, so you can start to recalibrate.</p>
-
-  <div class="anchor-line">"The pattern is bigger than one person."</div>
-  <div class="page-number">14</div>
+<!-- ========== CHAPTER 3 BREAK (14) ========== -->
+<div class="chapter-circle-page">
+  <div class="cc-accent"></div>
+  <div class="cc-circle"><span class="cc-number">3</span></div>
+  <div class="cc-title">The patterns you keep repeating</div>
+  <div class="page-number light">14</div>
 </div>
 
 
-<!-- ========== CHAPTER 4 ========== -->
+<!-- ========== CHAPTER 3 CONTENT ========== -->
 <!-- Page 15 -->
 <div class="page">
   <div class="top-rule"></div>
-  <div class="chapter-label">Chapter 04</div>
-  <h2 class="chapter-title">What this did to you</h2>
+  <div class="chapter-label">Chapter 03</div>
+  <h2 class="chapter-title">The patterns you keep repeating</h2>
 
-  <p class="body-text">Emotional abuse does not leave marks you can see. What it leaves behind is quieter than that, and in some ways harder to deal with because of it.</p>
+  <p class="body-text">This is the chapter most people need the most and find the hardest to read.</p>
+  <p class="body-text">Because it is one thing to understand that you were in a toxic relationship. It is another thing entirely to look at your own patterns and ask why you ended up there, and why there is a chance you could end up there again if nothing changes.</p>
+  <p class="body-text">This is not about blame. This is about awareness. You cannot break a cycle you refuse to examine. And examining it is not the same as accepting fault for what someone else did to you.</p>
 
-  <p class="body-text">It changes the way you operate. The way you make decisions. The way you read situations. The way you talk to yourself when something goes wrong. And because those changes happen gradually, you often do not even realize how much has shifted until you are out of it and trying to figure out why basic things feel so hard.</p>
+  <div class="section-heading">Confusing intensity for love</div>
 
-  <p class="body-text">This chapter is not here to make you feel broken. It is here to explain what actually happened so you can stop blaming yourself for the symptoms and start understanding their source.</p>
-
-  <div class="section-heading">The self-doubt that moved in</div>
-
-  <p class="body-text">One of the most consistent outcomes of emotionally abusive relationships is a level of self-doubt that was not there before, or at least not to this degree.</p>
-
-  <p class="body-text">When your perceptions are regularly questioned, when your memory gets challenged, when your reactions are consistently labeled as too much or unreasonable, your brain starts to outsource its sense of reality. You stop trusting your own read of a situation because that trust has been used against you enough times that it no longer feels safe.</p>
-
-  <p class="body-text">So you second-guess. You look for external validation before you act on anything. You replay conversations trying to figure out if you were the problem. You ask three people what they think before you make a decision you used to make without thinking twice.</p>
-
-  <p class="body-text">That is not who you are. That is a habit your mind developed to survive a specific environment.</p>
+  <p class="body-text">One of the most common patterns in people who find themselves in toxic relationships repeatedly is this: they have learned to read intensity as love.</p>
+  <p class="body-text">The obsessive attention at the beginning. The constant communication. The feeling that this person chose you above everyone else. The passion and the drama and the highs and the lows. All of it reads as proof that the connection is deep and real.</p>
+  <p class="body-text">But intensity is not the same as depth. And passion is not the same as love. A relationship can feel like the most electric thing you have ever experienced and still be the worst thing for you. The nervous system does not know the difference between excitement and anxiety. They produce similar sensations. Which means that what feels like chemistry might actually be your body recognizing a familiar kind of instability.</p>
+  <p class="body-text">Healthy love does not spike your nervous system. It regulates it. And if you have never experienced that, calm can feel like a red flag when it is actually the thing you need most.</p>
 
   <div class="page-number">15</div>
 </div>
@@ -538,25 +731,19 @@
 <div class="page">
   <div class="top-rule"></div>
 
-  <div class="section-heading">Hypervigilance</div>
+  <div class="section-heading">Falling for potential instead of reality</div>
 
-  <p class="body-text">When you spend an extended period of time in an environment where someone's mood is unpredictable and your wellbeing depends on reading it correctly, your nervous system learns to stay on guard.</p>
+  <p class="body-text">Another pattern worth looking at honestly: staying for who someone could be rather than who they actually are.</p>
+  <p class="body-text">You see the version of them from the beginning, or the version they show you in the good moments, and you convince yourself that that is the real them. That the difficult behavior is the exception, not the pattern. That if you just love them right, or say the right thing, or give it a little more time, that version will become permanent.</p>
+  <p class="body-text">It is a form of hope that keeps you locked in. Because you are not responding to the person in front of you. You are responding to the person you believe they are capable of becoming. And people will not change because you believe in them hard enough. They change because they decide to. Those are two very different things.</p>
 
-  <p class="body-text">You start picking up on micro signals. The tone of a text. The slight shift in someone's expression. How they close a door. You become very good at sensing when something is off, often before there is any obvious reason to feel that way.</p>
+  <div class="section-heading">Over-giving as a way to feel safe</div>
 
-  <p class="body-text">From the outside this might look like anxiety or overthinking. But it is actually your nervous system doing what it was trained to do in that relationship. The problem is that it does not automatically stop when the relationship does. You carry it out with you. Into your next relationship. Into your friendships. Into situations where there is actually nothing to fear.</p>
+  <p class="body-text">A lot of people in these relationships become over-givers. They give more time, more energy, more patience, more understanding than is reasonable. And often it comes from a place of trying to create stability. If I do enough, maybe things will stay good. If I am low-maintenance enough, maybe they will not pull away.</p>
+  <p class="body-text">The over-giving is not generosity. It is anxiety wearing the mask of generosity. It is an attempt to control an environment that feels unpredictable by making yourself as easy and agreeable as possible.</p>
+  <p class="body-text">The problem is that it teaches people exactly how much they can take from you. And it leaves you completely depleted, wondering why you gave everything and still lost.</p>
 
-  <p class="body-text">You did not become an anxious person. You became a person whose nervous system learned that being caught off guard had consequences.</p>
-
-  <div class="section-heading">Loss of self-trust</div>
-
-  <p class="body-text">This one is at the core of almost everything.</p>
-
-  <p class="body-text">When your instincts are overridden enough times, when your version of events is regularly rewritten, when trusting your gut led to conflict rather than resolution, you learn not to trust it anymore. And that loss of self-trust does not stay inside the relationship. It bleeds into every area of your life.</p>
-
-  <p class="body-text">Decisions that used to feel simple start to feel heavy. You overthink things that should not require much thought at all. You feel like you need permission, or at least confirmation from someone else, before you allow yourself to act on what you already know.</p>
-
-  <div class="pull">You did not lose yourself. Your system adapted to keep you safe. Those are two very different things.</div>
+  <div class="pull">The pattern is bigger than one person. It will follow you into the next relationship until you see it clearly.</div>
 
   <div class="page-number">16</div>
 </div>
@@ -565,82 +752,57 @@
 <div class="page">
   <div class="top-rule"></div>
 
-  <div class="section-heading">People-pleasing as protection</div>
+  <div class="section-heading">Staying too long</div>
 
-  <p class="body-text">People-pleasing often gets written off as a personality trait, something you either have or you do not. But in a lot of cases it is a learned response to an unsafe environment.</p>
+  <p class="body-text">Most people in these situations stay longer than they planned to. Sometimes much longer. And they spend a lot of time afterward trying to understand why.</p>
+  <p class="body-text">Part of it is the trauma bond we talked about. Part of it is hope. Part of it is that leaving feels like admitting defeat, or like losing the investment of time and emotion you have already put in. But a big part of it is also this: you keep waiting for the beginning to come back. For the person they were in those first months to reappear and make all of it worth it. And that wait can consume years.</p>
+  <p class="body-text">The hard truth is that the beginning was not a preview of who they are. In many cases, it was a performance. And waiting for it to return is like waiting for an actor to stay in character offstage. It is not coming back because it was never the full picture to begin with.</p>
 
-  <p class="body-text">If keeping someone happy kept you safe, if being agreeable prevented conflict, if making yourself small and easy and low-maintenance reduced the chances of something going wrong, then your brain learned a very efficient lesson: prioritize their comfort over your own needs and things will be okay.</p>
+  <div class="section-heading">The pull toward familiar chaos</div>
 
-  <p class="body-text">The issue is that strategy, useful as it may have been in that specific environment, follows you out of it. You start applying it everywhere. You say yes when you mean no. You apologize for things that are not your fault. You shrink in situations where you have every right to take up space. You feel guilty for having needs at all.</p>
+  <p class="body-text">This one goes deeper than the relationship itself. For some people, a certain level of emotional chaos does not just feel familiar. It feels like home. Not because they want to be hurt, but because that is the emotional environment they learned to navigate first, often in childhood.</p>
+  <p class="body-text">When the nervous system grows up in an unpredictable environment, it calibrates to that level of stimulation. So when a relationship feels calm and stable and safe, something in you might actually read it as boring or lacking depth, even if logically you know it is good. You may even find yourself creating problems that do not exist because the quiet feels uncomfortable.</p>
+  <p class="body-text">Recognizing this is not about blame. It is about understanding where your nervous system learned what love is supposed to feel like, so you can start to recalibrate.</p>
 
-  <div class="section-heading">Walking on eggshells as a default</div>
+  <div class="chapter-icon">
+    <!-- Repeating circular arrow -->
+    <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M40 14 A18 18 0 1 0 44 28" stroke="#C1704A" stroke-width="1.8" stroke-linecap="round"/>
+      <polyline points="38,7 40,14 46,12" stroke="#C1704A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
 
-  <p class="body-text">After spending significant time in an environment where the wrong word or the wrong timing could set something off, your baseline shifts. You start approaching interactions with a level of caution that other people do not understand because they have never needed it.</p>
-
-  <p class="body-text">You measure your words before you say them. You think about how something might land before you send it. You brace for reactions that never come in relationships with people who are actually safe.</p>
-
-  <p class="body-text">That caution is exhausting to carry. And it can make it very difficult to be fully present and open in new relationships, even when those relationships are genuinely good.</p>
-
-  <p class="body-text">None of this means you are broken. It means something happened to you and your mind responded the only way it knew how. That is not a character flaw. That is a human being doing its best.</p>
-
-  <div class="anchor-line">"You did not lose yourself. You adapted."</div>
+  <div class="anchor-line">"The pattern is bigger than one person."</div>
   <div class="page-number">17</div>
 </div>
 
 
-<!-- ========== CHAPTER 5 ========== -->
-<!-- Page 18 -->
-<div class="page">
-  <div class="top-rule"></div>
-  <div class="chapter-label">Chapter 05</div>
-  <h2 class="chapter-title">How to detach</h2>
-
-  <p class="body-text">Detachment is one of the most misunderstood parts of healing from a relationship like this.</p>
-
-  <p class="body-text">Most people hear the word and think it means becoming cold. Indifferent. Cutting off your feelings and forcing yourself not to care. That is not what it is. Detachment is not the absence of feeling. It is the decision to stop letting those feelings drive you back to something that is not good for you.</p>
-
-  <p class="body-text">You can miss someone and still not go back. You can grieve something and still move forward. Detachment just means you are no longer outsourcing your wellbeing to someone who was never a safe place to put it.</p>
-
-  <div class="section-heading">Why detachment feels impossible at first</div>
-
-  <p class="body-text">The reason detachment is so hard in these situations goes back to everything we have already covered. The trauma bond. The intermittent reinforcement. The way your nervous system learned to crave the cycle even when the cycle was hurting you.</p>
-
-  <p class="body-text">Walking away from that is not just an emotional decision. It is a neurological one. Your brain is going to resist it the same way it resists any change to a well-worn pattern. You are going to feel the pull. You are going to have moments where everything in you wants to reach out. That does not mean you are making the wrong choice. It means you are breaking an old one.</p>
-
-  <div class="section-heading">Breaking the hope loop</div>
-
-  <p class="body-text">The hope loop is the thing that keeps most people stuck the longest. It is the constant back and forth between knowing you need to leave and believing that maybe this time will be different. Maybe they have changed. Maybe if you handle it differently, the good version will stay this time.</p>
-
-  <p class="body-text">Breaking the hope loop requires being ruthlessly honest with yourself about the difference between who someone actually is and who you wish they were. The evidence is in the pattern, not the promises.</p>
-
-  <div class="page-number">18</div>
+<!-- ========== CHAPTER 4 BREAK (18) ========== -->
+<div class="chapter-circle-page">
+  <div class="cc-accent"></div>
+  <div class="cc-circle"><span class="cc-number">4</span></div>
+  <div class="cc-title">What this did to you</div>
+  <div class="page-number light">18</div>
 </div>
 
+
+<!-- ========== CHAPTER 4 CONTENT ========== -->
 <!-- Page 19 -->
 <div class="page">
   <div class="top-rule"></div>
+  <div class="chapter-label">Chapter 04</div>
+  <h2 class="chapter-title">What this did to you</h2>
 
-  <div class="section-heading">When you want to reach out</div>
+  <p class="body-text">Emotional abuse does not leave marks you can see. What it leaves behind is quieter than that, and in some ways harder to deal with because of it.</p>
+  <p class="body-text">It changes the way you operate. The way you make decisions. The way you read situations. The way you talk to yourself when something goes wrong. And because those changes happen gradually, you often do not even realize how much has shifted until you are out of it and trying to figure out why basic things feel so hard.</p>
+  <p class="body-text">This chapter is not here to make you feel broken. It is here to explain what actually happened so you can stop blaming yourself for the symptoms and start understanding their source.</p>
 
-  <p class="body-text">There will be moments, especially early on, where the urge to reach out feels overwhelming. You will convince yourself that you just need closure. Or that you left things on a bad note and you owe them a conversation. Or that you just want to see how they are doing.</p>
+  <div class="section-heading">The self-doubt that moved in</div>
 
-  <p class="body-text">Most of the time, none of that is the real reason. The real reason is that your nervous system is in withdrawal and it is looking for its next hit.</p>
-
-  <p class="body-text">When that urge shows up, try this. Give yourself a window. Tell yourself you can reach out in 48 hours if you still want to. Then in those 48 hours, write down everything you are feeling instead. Get it out somewhere. More often than not, the urgency fades. And if it does not, at least you gave yourself time to respond rather than react.</p>
-
-  <p class="body-text">The goal is not to never feel the urge. The goal is to build a gap between the feeling and the action.</p>
-
-  <div class="section-heading">Stopping the checking behaviors</div>
-
-  <p class="body-text">Checking their profile. Rereading old messages. Asking mutual friends how they are. These behaviors feel harmless but they are keeping you tethered. Every time you check, you are reopening the wound before it has a chance to start closing.</p>
-
-  <p class="body-text">The practical answer is to make it harder. Mute, restrict, or block where you need to. Not out of anger. Out of self-preservation. You are not doing it to punish them. You are doing it because your healing needs space that you cannot create while you are still consuming information about them.</p>
-
-  <div class="pull">Detachment is not giving up. It is giving yourself a fighting chance.</div>
-
-  <div class="section-heading">Grief versus withdrawal</div>
-
-  <p class="body-text">Missing them after you cut contact is not a sign that you made the wrong decision. It is grief. And grief is supposed to hurt. The pain you feel in those first weeks of no contact is not evidence that you need to go back. It is evidence that you are healing. Those are not the same thing, even though they can feel identical in the moment.</p>
+  <p class="body-text">One of the most consistent outcomes of emotionally abusive relationships is a level of self-doubt that was not there before, or at least not to this degree.</p>
+  <p class="body-text">When your perceptions are regularly questioned, when your memory gets challenged, when your reactions are consistently labeled as too much or unreasonable, your brain starts to outsource its sense of reality. You stop trusting your own read of a situation because that trust has been used against you enough times that it no longer feels safe.</p>
+  <p class="body-text">So you second-guess. You look for external validation before you act on anything. You replay conversations trying to figure out if you were the problem. You ask three people what they think before you make a decision you used to make without thinking twice.</p>
+  <p class="body-text">That is not who you are. That is a habit your mind developed to survive a specific environment.</p>
 
   <div class="page-number">19</div>
 </div>
@@ -649,104 +811,83 @@
 <div class="page">
   <div class="top-rule"></div>
 
-  <div class="section-heading">No contact and low contact</div>
+  <div class="section-heading">Hypervigilance</div>
 
-  <p class="body-text">No contact is not a manipulation tactic. It is not something you do to make them miss you or to teach them a lesson. It is something you do for your nervous system, because your nervous system cannot begin to recalibrate while you are still in the cycle.</p>
+  <p class="body-text">When you spend an extended period of time in an environment where someone's mood is unpredictable and your wellbeing depends on reading it correctly, your nervous system learns to stay on guard.</p>
+  <p class="body-text">You start picking up on micro signals. The tone of a text. The slight shift in someone's expression. How they close a door. You become very good at sensing when something is off, often before there is any obvious reason to feel that way.</p>
+  <p class="body-text">From the outside this might look like anxiety or overthinking. But it is actually your nervous system doing what it was trained to do in that relationship. The problem is that it does not automatically stop when the relationship does. You carry it out with you. Into your next relationship. Into your friendships. Into situations where there is actually nothing to fear.</p>
+  <p class="body-text">You did not become an anxious person. You became a person whose nervous system learned that being caught off guard had consequences.</p>
 
-  <p class="body-text">Every interaction, every text, every accidental glimpse of their stories keeps the attachment alive and delays the work your brain needs to do. Space is not cruelty. Space is the actual mechanism of healing.</p>
+  <div class="section-heading">Loss of self-trust</div>
 
-  <p class="body-text">If no contact is not possible because of kids, a shared workplace, or other unavoidable circumstances, low contact is the next best option. That means keeping interactions minimal, functional, and emotionally neutral. Not cold. Not hostile. Just boundaried.</p>
+  <p class="body-text">This one is at the core of almost everything.</p>
+  <p class="body-text">When your instincts are overridden enough times, when your version of events is regularly rewritten, when trusting your gut led to conflict rather than resolution, you learn not to trust it anymore. And that loss of self-trust does not stay inside the relationship. It bleeds into every area of your life.</p>
+  <p class="body-text">Decisions that used to feel simple start to feel heavy. You overthink things that should not require much thought at all. You feel like you need permission, or at least confirmation from someone else, before you allow yourself to act on what you already know.</p>
 
-  <div class="section-heading">Handling the emotional waves</div>
+  <div class="pull">You did not lose yourself. Your system adapted to keep you safe. Those are two very different things.</div>
 
-  <p class="body-text">Detachment is not a straight line. There will be days where you feel genuinely free, and days where something small, a song, a place, a random memory, knocks you right back to where you started. That is normal. It is not regression. It is just how healing actually works.</p>
-
-  <p class="body-text">On those hard days, the most important thing you can do is not act on what you are feeling. Feel it. Let it move through you. Do not make any decisions about reaching out, or going back, or reconsidering anything while you are in the middle of a wave. Waves pass. Decisions made inside them often make things worse.</p>
-
-  <p class="body-text">Give yourself something physical to do instead. Walk. Work out. Call someone who actually knows what you have been through. Get out of your head and back into your body. That is not avoidance. That is regulation.</p>
-
-  <div class="anchor-line">"Detachment is not giving up. It is giving yourself a chance."</div>
   <div class="page-number">20</div>
 </div>
 
-
-<!-- ========== CHAPTER 6 ========== -->
 <!-- Page 21 -->
 <div class="page">
   <div class="top-rule"></div>
-  <div class="chapter-label">Chapter 06</div>
-  <h2 class="chapter-title">Rebuilding yourself</h2>
 
-  <p class="body-text">This is the part of the healing process that does not get talked about enough, probably because it is slower and quieter than everything that came before it.</p>
+  <div class="section-heading">People-pleasing as protection</div>
 
-  <p class="body-text">Leaving is dramatic. The pain is loud. The grief is visible. But rebuilding happens in small, almost invisible moments that most people overlook entirely. And that invisibility is exactly what makes it easy to miss how much progress you are actually making.</p>
+  <p class="body-text">People-pleasing often gets written off as a personality trait, something you either have or you do not. But in a lot of cases it is a learned response to an unsafe environment.</p>
+  <p class="body-text">If keeping someone happy kept you safe, if being agreeable prevented conflict, if making yourself small and easy and low-maintenance reduced the chances of something going wrong, then your brain learned a very efficient lesson: prioritize their comfort over your own needs and things will be okay.</p>
+  <p class="body-text">The issue is that strategy, useful as it may have been in that specific environment, follows you out of it. You start applying it everywhere. You say yes when you mean no. You apologize for things that are not your fault. You shrink in situations where you have every right to take up space. You feel guilty for having needs at all.</p>
 
-  <div class="section-heading">What was actually taken from you</div>
+  <div class="section-heading">Walking on eggshells as a default</div>
 
-  <p class="body-text">Let us be specific about this. Because it is not your intelligence that got damaged. It is not your worth. Those things are still intact even when they do not feel like it.</p>
+  <p class="body-text">After spending significant time in an environment where the wrong word or the wrong timing could set something off, your baseline shifts. You start approaching interactions with a level of caution that other people do not understand because they have never needed it.</p>
+  <p class="body-text">You measure your words before you say them. You think about how something might land before you send it. You brace for reactions that never come in relationships with people who are actually safe.</p>
+  <p class="body-text">That caution is exhausting to carry. And it can make it very difficult to be fully present and open in new relationships, even when those relationships are genuinely good.</p>
+  <p class="body-text">None of this means you are broken. It means something happened to you and your mind responded the only way it knew how. That is not a character flaw. That is a human being doing its best.</p>
 
-  <p class="body-text">What got disrupted is your access to yourself. Your confidence in your own perceptions. Your ability to feel something and just believe it without needing to justify it to anyone. Your trust that your instincts are a reliable source of information rather than something to be suspicious of.</p>
+  <div class="chapter-icon">
+    <!-- Cracked heart -->
+    <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M26 44 C26 44 7 30 7 17 C7 11 12 7 18 7 C22 7 25 10 26 12 C27 10 30 7 34 7 C40 7 45 11 45 17 C45 30 26 44 26 44 Z" stroke="#C1704A" stroke-width="1.8" stroke-linejoin="round"/>
+      <polyline points="24,13 21,22 27,22 23,33" stroke="#C1704A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
 
-  <p class="body-text">Rebuilding is not about becoming more confident in the way that phrase usually gets used. It is about restoring your relationship with your own inner voice. Learning to hear it again. And slowly, carefully, learning to act on it.</p>
-
-  <div class="section-heading">Small promises kept</div>
-
-  <p class="body-text">Self-trust is not rebuilt through grand gestures or major life changes. It is rebuilt through tiny, consistent moments of following through on what you said you would do for yourself.</p>
-
-  <p class="body-text">You said you would go to sleep at a reasonable time. You did. You said you would not text them. You did not. You said you would go to that workout class even though you did not feel like it. You went.</p>
-
-  <p class="body-text">None of those things sound significant. But each one sends a signal to your nervous system: I can be trusted. I keep my word to myself. That accumulation is what self-trust is actually made of.</p>
-
+  <div class="anchor-line">"You did not lose yourself. You adapted."</div>
   <div class="page-number">21</div>
 </div>
 
-<!-- Page 22 -->
-<div class="page">
-  <div class="top-rule"></div>
 
-  <div class="section-heading">Listening to your body again</div>
-
-  <p class="body-text">A big part of rebuilding is learning to trust your physical signals again after spending so long being taught to override them.</p>
-
-  <p class="body-text">This looks like noticing when something feels off in a new situation and not immediately talking yourself out of it. It looks like paying attention to who drains you and who leaves you feeling better. It looks like honoring tiredness instead of pushing through it out of obligation. It looks like letting discomfort be a data point instead of something to immediately fix or suppress.</p>
-
-  <p class="body-text">You do not have to be perfect at this. You just have to start practicing it. Start small. What does your body feel like right now in this moment? Tense or at ease? Tired or alert? You do not have to do anything with the answer. Just practice noticing that there is one.</p>
-
-  <div class="section-heading">Rebuilding standards, not just confidence</div>
-
-  <p class="body-text">Here is a distinction that matters. Confidence is how you feel about yourself. Standards are what you are willing to accept. And right now, you may need to work on your standards more than your confidence, because your confidence will rebuild naturally as you start acting in alignment with what you actually deserve.</p>
-
-  <p class="body-text">Standards are not about being rigid or closed off. They are about having a clear sense of what is and is not okay, and being willing to enforce that sense regardless of how much you like someone or how afraid you are of losing them.</p>
-
-  <p class="body-text">Start by getting specific. Not "I want someone who treats me well" but "I will not stay in situations where I feel like I have to earn basic respect." The more concrete your standards are, the harder they are to talk yourself out of.</p>
-
-  <div class="pull">Self-trust is not a feeling. It is a practice. And you start it with the smallest promises you keep to yourself.</div>
-
-  <div class="anchor-line">"Self-trust is built through small promises you keep to yourself."</div>
-  <div class="page-number">22</div>
+<!-- ========== CHAPTER 5 BREAK (22) ========== -->
+<div class="chapter-circle-page">
+  <div class="cc-accent"></div>
+  <div class="cc-circle"><span class="cc-number">5</span></div>
+  <div class="cc-title">How to detach</div>
+  <div class="page-number light">22</div>
 </div>
 
 
-<!-- ========== CHAPTER 7 ========== -->
+<!-- ========== CHAPTER 5 CONTENT ========== -->
 <!-- Page 23 -->
 <div class="page">
   <div class="top-rule"></div>
-  <div class="chapter-label">Chapter 07</div>
-  <h2 class="chapter-title">Moving forward without repeating it</h2>
+  <div class="chapter-label">Chapter 05</div>
+  <h2 class="chapter-title">How to detach</h2>
 
-  <p class="body-text">At some point, you will want to open yourself up again. And when that happens, you are going to come face to face with one of the more uncomfortable parts of this whole process.</p>
+  <p class="body-text">Detachment is one of the most misunderstood parts of healing from a relationship like this.</p>
+  <p class="body-text">Most people hear the word and think it means becoming cold. Indifferent. Cutting off your feelings and forcing yourself not to care. That is not what it is. Detachment is not the absence of feeling. It is the decision to stop letting those feelings drive you back to something that is not good for you.</p>
+  <p class="body-text">You can miss someone and still not go back. You can grieve something and still move forward. Detachment just means you are no longer outsourcing your wellbeing to someone who was never a safe place to put it.</p>
 
-  <p class="body-text">Healthy feels different. And different, at first, can feel wrong.</p>
+  <div class="section-heading">Why detachment feels impossible at first</div>
 
-  <p class="body-text">That is not a sign that the new person is not right for you. It is a sign that your nervous system is still calibrated to the old environment. Part of moving forward is learning to tell the difference between something being genuinely off, and something simply being unfamiliar.</p>
+  <p class="body-text">The reason detachment is so hard in these situations goes back to everything we have already covered. The trauma bond. The intermittent reinforcement. The way your nervous system learned to crave the cycle even when the cycle was hurting you.</p>
+  <p class="body-text">Walking away from that is not just an emotional decision. It is a neurological one. Your brain is going to resist it the same way it resists any change to a well-worn pattern. You are going to feel the pull. You are going to have moments where everything in you wants to reach out. That does not mean you are making the wrong choice. It means you are breaking an old one.</p>
 
-  <div class="section-heading">What healthy love actually feels like</div>
+  <div class="section-heading">Breaking the hope loop</div>
 
-  <p class="body-text">Healthy love is not the absence of passion. It is not boring or flat or lacking depth. But it does feel different from what a lot of people are used to when they come out of high-intensity toxic relationships.</p>
-
-  <p class="body-text">It is consistent. The person shows up the same way on a Tuesday as they do when they are trying to impress you. It is calm. There is no constant tension underneath every interaction, no walking on eggshells, no waiting to see which version of them you are going to get today. It is safe. You can say what you actually think without running it through a filter first to calculate how they might react.</p>
-
-  <p class="body-text">That consistency and calm can feel anticlimactic at first. Your nervous system has been trained to interpret the absence of chaos as the absence of love. It is going to take time to trust that quiet is not the same as empty.</p>
+  <p class="body-text">The hope loop is the thing that keeps most people stuck the longest. It is the constant back and forth between knowing you need to leave and believing that maybe this time will be different. Maybe they have changed. Maybe if you handle it differently, the good version will stay this time.</p>
+  <p class="body-text">Breaking the hope loop requires being ruthlessly honest with yourself about the difference between who someone actually is and who you wish they were. The evidence is in the pattern, not the promises.</p>
 
   <div class="page-number">23</div>
 </div>
@@ -755,12 +896,162 @@
 <div class="page">
   <div class="top-rule"></div>
 
+  <div class="section-heading">When you want to reach out</div>
+
+  <p class="body-text">There will be moments, especially early on, where the urge to reach out feels overwhelming. You will convince yourself that you just need closure. Or that you left things on a bad note and you owe them a conversation. Or that you just want to see how they are doing.</p>
+  <p class="body-text">Most of the time, none of that is the real reason. The real reason is that your nervous system is in withdrawal and it is looking for its next hit.</p>
+  <p class="body-text">When that urge shows up, try this. Give yourself a window. Tell yourself you can reach out in 48 hours if you still want to. Then in those 48 hours, write down everything you are feeling instead. Get it out somewhere. More often than not, the urgency fades. And if it does not, at least you gave yourself time to respond rather than react.</p>
+  <p class="body-text">The goal is not to never feel the urge. The goal is to build a gap between the feeling and the action.</p>
+
+  <div class="section-heading">Stopping the checking behaviors</div>
+
+  <p class="body-text">Checking their profile. Rereading old messages. Asking mutual friends how they are. These behaviors feel harmless but they are keeping you tethered. Every time you check, you are reopening the wound before it has a chance to start closing.</p>
+  <p class="body-text">The practical answer is to make it harder. Mute, restrict, or block where you need to. Not out of anger. Out of self-preservation. You are not doing it to punish them. You are doing it because your healing needs space that you cannot create while you are still consuming information about them.</p>
+
+  <div class="pull">Detachment is not giving up. It is giving yourself a fighting chance.</div>
+
+  <div class="section-heading">Grief versus withdrawal</div>
+
+  <p class="body-text">Missing them after you cut contact is not a sign that you made the wrong decision. It is grief. And grief is supposed to hurt. The pain you feel in those first weeks of no contact is not evidence that you need to go back. It is evidence that you are healing. Those are not the same thing, even though they can feel identical in the moment.</p>
+
+  <div class="page-number">24</div>
+</div>
+
+<!-- Page 25 -->
+<div class="page">
+  <div class="top-rule"></div>
+
+  <div class="section-heading">No contact and low contact</div>
+
+  <p class="body-text">No contact is not a manipulation tactic. It is not something you do to make them miss you or to teach them a lesson. It is something you do for your nervous system, because your nervous system cannot begin to recalibrate while you are still in the cycle.</p>
+  <p class="body-text">Every interaction, every text, every accidental glimpse of their stories keeps the attachment alive and delays the work your brain needs to do. Space is not cruelty. Space is the actual mechanism of healing.</p>
+  <p class="body-text">If no contact is not possible because of kids, a shared workplace, or other unavoidable circumstances, low contact is the next best option. That means keeping interactions minimal, functional, and emotionally neutral. Not cold. Not hostile. Just boundaried.</p>
+
+  <div class="section-heading">Handling the emotional waves</div>
+
+  <p class="body-text">Detachment is not a straight line. There will be days where you feel genuinely free, and days where something small, a song, a place, a random memory, knocks you right back to where you started. That is normal. It is not regression. It is just how healing actually works.</p>
+  <p class="body-text">On those hard days, the most important thing you can do is not act on what you are feeling. Feel it. Let it move through you. Do not make any decisions about reaching out, or going back, or reconsidering anything while you are in the middle of a wave. Waves pass. Decisions made inside them often make things worse.</p>
+  <p class="body-text">Give yourself something physical to do instead. Walk. Work out. Call someone who actually knows what you have been through. Get out of your head and back into your body. That is not avoidance. That is regulation.</p>
+
+  <div class="chapter-icon">
+    <!-- Scissors -->
+    <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="13" cy="36" r="7" stroke="#C1704A" stroke-width="1.8"/>
+      <circle cx="13" cy="16" r="7" stroke="#C1704A" stroke-width="1.8"/>
+      <line x1="18" y1="31" x2="46" y2="10" stroke="#C1704A" stroke-width="1.8" stroke-linecap="round"/>
+      <line x1="18" y1="21" x2="46" y2="42" stroke="#C1704A" stroke-width="1.8" stroke-linecap="round"/>
+      <ellipse cx="27" cy="26" rx="2.5" ry="2.5" fill="#faf8f0"/>
+    </svg>
+  </div>
+
+  <div class="anchor-line">"Detachment is not giving up. It is giving yourself a chance."</div>
+  <div class="page-number">25</div>
+</div>
+
+
+<!-- ========== CHAPTER 6 BREAK (26) ========== -->
+<div class="chapter-circle-page">
+  <div class="cc-accent"></div>
+  <div class="cc-circle"><span class="cc-number">6</span></div>
+  <div class="cc-title">Rebuilding yourself</div>
+  <div class="page-number light">26</div>
+</div>
+
+
+<!-- ========== CHAPTER 6 CONTENT ========== -->
+<!-- Page 27 -->
+<div class="page">
+  <div class="top-rule"></div>
+  <div class="chapter-label">Chapter 06</div>
+  <h2 class="chapter-title">Rebuilding yourself</h2>
+
+  <p class="body-text">This is the part of the healing process that does not get talked about enough, probably because it is slower and quieter than everything that came before it.</p>
+  <p class="body-text">Leaving is dramatic. The pain is loud. The grief is visible. But rebuilding happens in small, almost invisible moments that most people overlook entirely. And that invisibility is exactly what makes it easy to miss how much progress you are actually making.</p>
+
+  <div class="section-heading">What was actually taken from you</div>
+
+  <p class="body-text">Let us be specific about this. Because it is not your intelligence that got damaged. It is not your worth. Those things are still intact even when they do not feel like it.</p>
+  <p class="body-text">What got disrupted is your access to yourself. Your confidence in your own perceptions. Your ability to feel something and just believe it without needing to justify it to anyone. Your trust that your instincts are a reliable source of information rather than something to be suspicious of.</p>
+  <p class="body-text">Rebuilding is not about becoming more confident in the way that phrase usually gets used. It is about restoring your relationship with your own inner voice. Learning to hear it again. And slowly, carefully, learning to act on it.</p>
+
+  <div class="section-heading">Small promises kept</div>
+
+  <p class="body-text">Self-trust is not rebuilt through grand gestures or major life changes. It is rebuilt through tiny, consistent moments of following through on what you said you would do for yourself.</p>
+  <p class="body-text">You said you would go to sleep at a reasonable time. You did. You said you would not text them. You did not. You said you would go to that workout class even though you did not feel like it. You went.</p>
+  <p class="body-text">None of those things sound significant. But each one sends a signal to your nervous system: I can be trusted. I keep my word to myself. That accumulation is what self-trust is actually made of.</p>
+
+  <div class="page-number">27</div>
+</div>
+
+<!-- Page 28 -->
+<div class="page">
+  <div class="top-rule"></div>
+
+  <div class="section-heading">Listening to your body again</div>
+
+  <p class="body-text">A big part of rebuilding is learning to trust your physical signals again after spending so long being taught to override them.</p>
+  <p class="body-text">This looks like noticing when something feels off in a new situation and not immediately talking yourself out of it. It looks like paying attention to who drains you and who leaves you feeling better. It looks like honoring tiredness instead of pushing through it out of obligation. It looks like letting discomfort be a data point instead of something to immediately fix or suppress.</p>
+  <p class="body-text">You do not have to be perfect at this. You just have to start practicing it. Start small. What does your body feel like right now in this moment? Tense or at ease? Tired or alert? You do not have to do anything with the answer. Just practice noticing that there is one.</p>
+
+  <div class="section-heading">Rebuilding standards, not just confidence</div>
+
+  <p class="body-text">Here is a distinction that matters. Confidence is how you feel about yourself. Standards are what you are willing to accept. And right now, you may need to work on your standards more than your confidence, because your confidence will rebuild naturally as you start acting in alignment with what you actually deserve.</p>
+  <p class="body-text">Standards are not about being rigid or closed off. They are about having a clear sense of what is and is not okay, and being willing to enforce that sense regardless of how much you like someone or how afraid you are of losing them.</p>
+  <p class="body-text">Start by getting specific. Not "I want someone who treats me well" but "I will not stay in situations where I feel like I have to earn basic respect." The more concrete your standards are, the harder they are to talk yourself out of.</p>
+
+  <div class="chapter-icon">
+    <!-- Seedling -->
+    <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="26" y1="44" x2="26" y2="18" stroke="#C1704A" stroke-width="1.8" stroke-linecap="round"/>
+      <path d="M26 32 C22 28 12 26 12 16 C20 14 28 18 26 30" stroke="#C1704A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <path d="M26 24 C30 20 40 18 40 8 C32 6 24 10 26 22" stroke="#C1704A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </svg>
+  </div>
+
+  <div class="pull">Self-trust is not a feeling. It is a practice. And you start it with the smallest promises you keep to yourself.</div>
+
+  <div class="anchor-line">"Self-trust is built through small promises you keep to yourself."</div>
+  <div class="page-number">28</div>
+</div>
+
+
+<!-- ========== CHAPTER 7 BREAK (29) ========== -->
+<div class="chapter-circle-page">
+  <div class="cc-accent"></div>
+  <div class="cc-circle"><span class="cc-number">7</span></div>
+  <div class="cc-title">Moving forward without repeating it</div>
+  <div class="page-number light">29</div>
+</div>
+
+
+<!-- ========== CHAPTER 7 CONTENT ========== -->
+<!-- Page 30 -->
+<div class="page">
+  <div class="top-rule"></div>
+  <div class="chapter-label">Chapter 07</div>
+  <h2 class="chapter-title">Moving forward without repeating it</h2>
+
+  <p class="body-text">At some point, you will want to open yourself up again. And when that happens, you are going to come face to face with one of the more uncomfortable parts of this whole process.</p>
+  <p class="body-text">Healthy feels different. And different, at first, can feel wrong.</p>
+  <p class="body-text">That is not a sign that the new person is not right for you. It is a sign that your nervous system is still calibrated to the old environment. Part of moving forward is learning to tell the difference between something being genuinely off, and something simply being unfamiliar.</p>
+
+  <div class="section-heading">What healthy love actually feels like</div>
+
+  <p class="body-text">Healthy love is not the absence of passion. It is not boring or flat or lacking depth. But it does feel different from what a lot of people are used to when they come out of high-intensity toxic relationships.</p>
+  <p class="body-text">It is consistent. The person shows up the same way on a Tuesday as they do when they are trying to impress you. It is calm. There is no constant tension underneath every interaction, no walking on eggshells, no waiting to see which version of them you are going to get today. It is safe. You can say what you actually think without running it through a filter first to calculate how they might react.</p>
+  <p class="body-text">That consistency and calm can feel anticlimactic at first. Your nervous system has been trained to interpret the absence of chaos as the absence of love. It is going to take time to trust that quiet is not the same as empty.</p>
+
+  <div class="page-number">30</div>
+</div>
+
+<!-- Page 31 -->
+<div class="page">
+  <div class="top-rule"></div>
+
   <div class="section-heading">Why calm feels boring at first</div>
 
   <p class="body-text">This is one of the most important things to understand going into something new. If you have spent a long time in a relationship defined by highs and lows, your brain has essentially set its baseline for what love feels like at a very high level of stimulation.</p>
-
   <p class="body-text">So when someone comes along who is kind, consistent, and drama-free, something in you might feel underwhelmed. Like there is no spark. Like the connection is not deep enough. But what you might actually be experiencing is the absence of anxiety. And your brain has spent a long time confusing anxiety with excitement.</p>
-
   <p class="body-text">Give it time. The spark you are looking for in stability is not the same as the spike you felt in chaos. It is quieter. But it is also real, and it does not come with a crash.</p>
 
   <div class="pull">Peace will feel unfamiliar before it feels right. That is not a red flag. That is your nervous system adjusting to something it was never taught to expect.</div>
@@ -768,48 +1059,49 @@
   <div class="section-heading">What you will not ignore anymore</div>
 
   <p class="body-text">Having gone through what you have, you now have a level of awareness that most people have to learn the hard way. You know what the early signs actually look like. You know what it feels like when someone's words and actions do not match. You know the difference between someone having a bad day and someone who consistently makes you feel small.</p>
-
   <p class="body-text">Trust that knowledge. The next time something feels off early on, you do not need to wait for a mountain of evidence before you take it seriously. A pattern is visible in the first few interactions if you are paying attention. Your gut will tell you. Listen to it this time.</p>
 
   <div class="section-heading">Standards over attachment</div>
 
   <p class="body-text">The old version of you may have held on past the point of reason because the attachment felt too strong to break. The version of you reading this final chapter is building something different. You are building a relationship with your own judgment that is stronger than the pull of any single person.</p>
-
   <p class="body-text">That does not mean you become closed off or guarded forever. It means you stop negotiating with your own standards the moment someone makes you feel something. Feeling something for someone is not a reason to abandon what you know about yourself. It is actually the moment your standards matter most.</p>
 
+  <div class="chapter-icon">
+    <!-- Forward path -->
+    <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="8" y1="26" x2="42" y2="26" stroke="#C1704A" stroke-width="1.8" stroke-linecap="round"/>
+      <polyline points="30,15 43,26 30,37" stroke="#C1704A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="8" y1="38" x2="8" y2="14" stroke="#C1704A" stroke-width="1.8" stroke-linecap="round"/>
+    </svg>
+  </div>
+
   <div class="anchor-line">"Peace will feel unfamiliar before it feels right."</div>
-  <div class="page-number">24</div>
+  <div class="page-number">31</div>
 </div>
 
 
-<!-- ========== CLOSING ========== -->
-<!-- Page 25 -->
+<!-- ========== CLOSING (32) ========== -->
 <div class="page dark">
   <div class="top-rule light"></div>
   <div class="closing-label">Closing</div>
   <h2 class="closing-title">This ends with you</h2>
 
   <p class="closing-body">You made it through the whole thing. And if you have been reading this and recognizing yourself in these pages, I want you to know that that recognition alone is significant. Most people spend years, sometimes their entire lives, cycling through the same painful dynamics without ever stopping to understand why.</p>
-
   <p class="closing-body">You stopped. You looked. That is not a small thing.</p>
 
   <div class="closing-pull">You are not broken. You are not doomed to repeat this. You are someone who went through something real, responded the only way you knew how, and is now choosing to understand it differently.</div>
 
   <p class="closing-body">Healing is not linear. There will be days where everything you have read here feels clear and solid, and days where you feel like you are right back at the beginning. You are not. You are just having a hard day. Those are not the same thing.</p>
-
   <p class="closing-body">Every time you catch a pattern before it catches you, you break the cycle a little more. Every time you listen to your gut instead of talking yourself out of it, you rebuild trust with yourself a little more. Every time you choose what is actually good for you over what just feels familiar, you rewrite the story a little more.</p>
-
   <p class="closing-body">You do not have to do it all at once. You just have to keep choosing differently. One moment at a time. One decision at a time. One day at a time.</p>
-
   <p class="closing-body">The cycle ends where your awareness begins. And yours has already begun.</p>
 
   <div class="sig">Written with care by <span>Avery Hubert</span><br>@notAveryHubert</div>
-  <div class="page-number light">25</div>
+  <div class="page-number light">32</div>
 </div>
 
 
-<!-- ========== REFLECTION PROMPTS ========== -->
-<!-- Page 26 -->
+<!-- ========== REFLECTION PROMPTS (33) ========== -->
 <div class="page">
   <div class="top-rule"></div>
   <div class="chapter-label">Reflection prompts</div>
@@ -847,7 +1139,7 @@
     <div class="converso-handle">Follow for more: <span>@notAveryHubert</span></div>
   </div>
 
-  <div class="page-number">26</div>
+  <div class="page-number">33</div>
 </div>
 
 
