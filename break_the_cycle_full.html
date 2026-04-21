@@ -6,6 +6,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
 <style>
+  @page {
+    size: 6.458in 8.542in;
+    margin: 0;
+  }
+
   @font-face {
     font-family: 'Chillax';
     src: url('Chillax-Regular.otf') format('opentype');
@@ -405,6 +410,35 @@
     margin-top: 6px;
     line-height: 1.6;
   }
+
+  @media print {
+    html, body {
+      width: 6.458in;
+      height: 8.542in;
+      margin: 0;
+      padding: 0;
+      background: none;
+      display: block;
+      gap: 0;
+    }
+
+    .cover-page,
+    .page {
+      width: 6.458in;
+      height: 8.542in;
+      break-after: page;
+      page-break-after: always;
+      border-radius: 0;
+      overflow: hidden;
+      box-shadow: none;
+    }
+
+    .cover-page:last-child,
+    .page:last-child {
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+  }
 </style>
 </head>
 <body>
@@ -416,7 +450,6 @@
   <div class="cover-title">BREAK<br>THE<br>CYCLE</div>
   <div class="cover-rule"></div>
   <div class="cover-author">Avery Hubert</div>
-  <div class="cover-handle">@notAveryHubert</div>
 </div>
 
 
