@@ -223,6 +223,10 @@
       letter-spacing: -0.4px;
       margin-bottom: 36px;
     }
+    .hook-title-second {
+      display: block;
+      margin-top: 22px;
+    }
     .hook-body p {
       font-size: 14px;
       color: #141414;
@@ -262,7 +266,7 @@
       font-weight: 600;
       letter-spacing: 1.8px;
       text-transform: uppercase;
-      color: #444;
+      color: #141414;
       margin-bottom: 10px;
     }
     .tool-box-text {
@@ -309,14 +313,14 @@
       margin: 0;
     }
     @media print {
-      body {
-        display: block;
+      html, body {
         width: 6.458in;
-        height: auto;
-        padding: 0;
+        height: 8.542in;
         margin: 0;
+        padding: 0;
+        background: none;
+        display: block;
         gap: 0;
-        background: white;
       }
       .cover-page,
       .page,
@@ -355,8 +359,8 @@
   <div class="page">
     <div class="top-rule"></div>
     <div class="hook-title">
-      You don't overlook narcissists because you're stupid.<br/>
-      You overlook them because they show up as everything you've been missing.
+      You don't overlook narcissists because you're stupid.
+      <span class="hook-title-second">You overlook them because they show up as everything you've been missing.</span>
     </div>
     <div class="hook-body">
       <p>They don't come off toxic in the beginning.</p>
