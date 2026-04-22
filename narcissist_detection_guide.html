@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Narcissist Detection Guide</title>
+  <style>
+    @font-face {
+      font-family: 'Chillax';
+      src: url('Chillax-Regular.otf') format('opentype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'Chillax';
+      src: url('Chillax-Medium.otf') format('opentype');
+      font-weight: 500;
+    }
+    @font-face {
+      font-family: 'Chillax';
+      src: url('Chillax-Semibold.otf') format('opentype');
+      font-weight: 600;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #1a1a1a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      gap: 32px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    /* ── PAGE SHELLS ── */
+    .cover-page,
+    .page,
+    .chapter-circle-page {
+      width: 620px;
+      height: 820px;
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    /* ── COVER ── */
+    .cover-page {
+      background: #E8FF8D;
+      display: flex;
+      flex-direction: column;
+      padding: 80px;
+    }
+    .cover-accent {
+      width: 36px;
+      height: 3px;
+      background: #141414;
+      margin-bottom: 48px;
+    }
+    .cover-title {
+      font-family: 'Chillax', sans-serif;
+      font-weight: 600;
+      font-size: 65px;
+      color: #141414;
+      letter-spacing: -2.5px;
+      line-height: 0.93;
+      flex: 1;
+    }
+    .cover-subtitle-text {
+      display: block;
+      font-family: 'Chillax', sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      color: #141414;
+      letter-spacing: 1px;
+      line-height: 1.4;
+      margin-top: 18px;
+    }
+    .cover-rule {
+      width: 40px;
+      height: 1px;
+      background: #2a2420;
+      margin-bottom: 14px;
+    }
+    .cover-author {
+      font-family: 'Chillax', sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      color: #141414;
+      letter-spacing: 1px;
+    }
+
+    /* ── CONTENT PAGES ── */
+    .page {
+      background: linear-gradient(135deg, #E8E0F0 0%, #D4E5F7 100%);
+      padding: 70px 80px;
+    }
+    .page.dark { background: #141414; }
+
+    /* ── CHAPTER DIVIDER ── */
+    .chapter-circle-page {
+      background: #E8FF8D;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 80px;
+    }
+    .cc-number {
+      font-family: 'Chillax', sans-serif;
+      font-size: 200px;
+      font-weight: 600;
+      color: #141414;
+      line-height: 1;
+      letter-spacing: -10px;
+    }
+    .cc-title {
+      font-family: 'Chillax', sans-serif;
+      font-size: 20px;
+      font-weight: 500;
+      color: #2a2420;
+      line-height: 1.4;
+      letter-spacing: -0.3px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    /* ── SHARED CONTENT ELEMENTS ── */
+    .top-rule {
+      width: 36px;
+      height: 2px;
+      background: #2a2420;
+      margin-bottom: 28px;
+    }
+    .top-rule.light { background: #E8FF8D; }
+
+    .chapter-label {
+      font-family: 'Chillax', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: #6B4C9A;
+      margin-bottom: 8px;
+    }
+    .chapter-label.light { color: #E8FF8D; }
+
+    .chapter-title {
+      font-family: 'Chillax', sans-serif;
+      font-size: 28px;
+      font-weight: 600;
+      color: #2a2420;
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+      margin-bottom: 38px;
+    }
+    .chapter-title.light { color: #faf8f0; }
+
+    .section-heading {
+      font-family: 'Chillax', sans-serif;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: #6B4C9A;
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(107, 76, 154, 0.35);
+    }
+
+    .section-icon {
+      height: 12px;
+      width: auto;
+      flex-shrink: 0;
+      mix-blend-mode: multiply;
+    }
+
+    /* body text uses system font — no font-family override */
+    .body-text {
+      font-size: 13.5px;
+      color: #141414;
+      line-height: 1.95;
+      margin-bottom: 16px;
+    }
+    .body-text.light { color: #d4d4cc; }
+
+    .pull {
+      font-family: 'Chillax', sans-serif;
+      border-left: 3px solid #6B4C9A;
+      padding-left: 18px;
+      margin: 28px 0;
+      font-size: 14.5px;
+      font-weight: 500;
+      color: #2a2420;
+      line-height: 1.65;
+    }
+    .pull.light { color: #faf8f0; }
+
+    .page-number {
+      font-family: 'Chillax', sans-serif;
+      position: absolute;
+      bottom: 28px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 10px;
+      font-weight: 400;
+      color: #aaa;
+      letter-spacing: 0.8px;
+    }
+    .page-number.light { color: #555; }
+
+    /* ── HOOK PAGE ── */
+    .hook-title {
+      font-family: 'Chillax', sans-serif;
+      font-size: 21px;
+      font-weight: 600;
+      color: #2a2420;
+      line-height: 1.35;
+      letter-spacing: -0.4px;
+      margin-bottom: 36px;
+    }
+    .hook-body p {
+      font-size: 14px;
+      color: #141414;
+      line-height: 2.0;
+    }
+    .hook-body .spacer { height: 12px; }
+
+    /* ── SIGN PAGES ── */
+    .sign-badge {
+      font-family: 'Chillax', sans-serif;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(107, 76, 154, 0.12);
+      color: #6B4C9A;
+      padding: 5px 12px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .sign-divider { display: none; }
+    .sign-section { margin-bottom: 22px; }
+
+    /* ── CTA TOOL BOX ── */
+    .tool-box {
+      background: #E8FF8D;
+      border-radius: 4px;
+      padding: 22px 24px;
+      margin-top: 28px;
+    }
+    .tool-box-label {
+      font-family: 'Chillax', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: #444;
+      margin-bottom: 10px;
+    }
+    .tool-box-text {
+      font-size: 13.5px;
+      color: #141414;
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+    .tool-box-link {
+      font-family: 'Chillax', sans-serif;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #141414;
+      text-decoration: underline;
+      word-break: break-all;
+    }
+
+    /* ── SELF CHECK ── */
+    .check-list {
+      list-style: none;
+      margin: 20px 0 8px;
+    }
+    .check-list li {
+      font-size: 13.5px;
+      color: #141414;
+      line-height: 1.75;
+      margin-bottom: 14px;
+      padding-left: 26px;
+      position: relative;
+    }
+    .check-list li::before {
+      content: '○';
+      font-family: 'Chillax', sans-serif;
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #6B4C9A;
+      font-size: 13px;
+    }
+
+    /* ── PRINT ── */
+    @page {
+      size: 6.458in 8.542in;
+      margin: 0;
+    }
+    @media print {
+      body {
+        display: block;
+        width: 6.458in;
+        height: auto;
+        padding: 0;
+        margin: 0;
+        gap: 0;
+        background: white;
+      }
+      .cover-page,
+      .page,
+      .chapter-circle-page {
+        width: 6.458in;
+        height: 8.542in;
+        border-radius: 0;
+        box-shadow: none;
+        break-after: page;
+        page-break-after: always;
+      }
+      .cover-page:last-child,
+      .page:last-child,
+      .chapter-circle-page:last-child {
+        break-after: avoid;
+        page-break-after: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PAGE 1: COVER -->
+  <div class="cover-page">
+    <div class="cover-accent"></div>
+    <div class="cover-title">
+      THE<br>NARCISSIST<br>DETECTION<br>GUIDE
+      <span class="cover-subtitle-text">8 signs you're missing</span>
+    </div>
+    <div class="cover-rule"></div>
+    <div class="cover-author">Avery Hubert</div>
+    <img src="Untitled design (5).png" style="position:absolute;bottom:75px;right:65px;width:265px;pointer-events:none;opacity:0.92;">
+  </div>
+
+  <!-- PAGE 2: THE HOOK -->
+  <div class="page">
+    <div class="top-rule"></div>
+    <div class="hook-title">
+      You don't overlook narcissists because you're stupid.<br/>
+      You overlook them because they show up as everything you've been missing.
+    </div>
+    <div class="hook-body">
+      <p>They don't come off toxic in the beginning.</p>
+      <div class="spacer"></div>
+      <p>They come off perfect.</p>
+      <div class="spacer"></div>
+      <p>Attentive. Interested. Almost too good to be true.</p>
+      <div class="spacer"></div>
+      <p>They create a version of themselves that feels like everything you've been looking for.</p>
+      <div class="spacer"></div>
+      <p>And you don't fall for them.</p>
+      <div class="spacer"></div>
+      <p>You fall for the fantasy they built for you.</p>
+      <div class="spacer"></div>
+      <p>By the time something feels off...</p>
+      <p>you're already emotionally involved.</p>
+      <div class="spacer"></div>
+      <p>Already attached.</p>
+      <div class="spacer"></div>
+      <p>Already trying to make it make sense.</p>
+    </div>
+    <div class="page-number">2</div>
+  </div>
+
+  <!-- PAGE 3: THE REFRAME -->
+  <div class="page">
+    <div class="top-rule"></div>
+    <div class="chapter-label">The Reality</div>
+    <div class="chapter-title">Narcissists Don't Look the Way You Think They Do.</div>
+    <div class="body-text">You expect them to be loud.<br/>Arrogant. Self obsessed.</div>
+    <div class="body-text">Some are.</div>
+    <div class="body-text">But the ones that actually hook you?</div>
+    <div class="body-text">They're subtle.</div>
+    <div class="body-text">They study you.</div>
+    <div class="body-text">They mirror you.</div>
+    <div class="body-text">They become exactly what you were looking for.</div>
+    <div class="pull">
+      And they've mastered the art of looking like the good person...<br/>
+      while slowly making you feel like the problem.
+    </div>
+    <div class="page-number">3</div>
+  </div>
+
+  <!-- PAGE 4: DISCLAIMER -->
+  <div class="page">
+    <div class="top-rule"></div>
+    <div class="chapter-label">Before We Start</div>
+    <div class="chapter-title">Let's Be Clear About One Thing.</div>
+    <div class="body-text">Not every self centered person is a narcissist.</div>
+    <div class="body-text">True narcissistic personality disorder is rare.</div>
+    <div class="body-text">But the traits you're about to read?</div>
+    <div class="body-text">Those are the patterns that create confusion, anxiety, and emotional attachment in unhealthy relationships.</div>
+    <div class="pull">
+      And whether someone has NPD or not...<br/>
+      if they consistently show these behaviors,<br/>
+      it's something you should pay attention to. And likely avoid.
+    </div>
+    <div class="page-number">4</div>
+  </div>
+
+  <!-- PAGE 5: CHAPTER DIVIDER -->
+  <div class="chapter-circle-page">
+    <div class="cc-number">8</div>
+    <div class="cc-title">Signs You Might Be Dealing With<br/>a Narcissistic Personality</div>
+  </div>
+
+  <!-- PAGE 6: SIGN #1 -->
+  <div class="page">
+    <div class="top-rule"></div>
+    <div class="sign-badge">🚩 Sign 01</div>
+    <div class="chapter-title">They Need Admiration<br/>(Subtle or Obvious)</div>
+    <div class="sign-section">
+      <div class="section-heading">
+        <img class="section-icon" src="Untitled design (5).png"> What it looks like
+      </div>
+      <div class="body-text">Talking about achievements, needing validation, fishing for praise. Conversations always circle back to them.</div>
+    </div>
+    <div class="sign-section">
+      <div class="section-heading">
+        <img class="section-icon" src="Untitled design (6).png"> What it feels like
+      </div>
+      <div class="body-text">You feel like you're supposed to admire them, validate them, lift them up. Like your job is to keep their ego topped off.</div>
+    </div>
+    <div class="sign-section">
+      <div class="section-heading">
+        <img class="section-icon" src="Untitled design (7).png"> What it actually is
+      </div>
+      <div class="body-text">A constant need for pedestalization. Whether loud (grandiose) or quiet (covert), the engine is the same. They need you to see them as exceptional.</div>
+    </div>
+    <div class="page-number">6</div>
+  </div>
+
+  <!-- PAGE 7: SIGN #2 -->
+  <div class="page">
+    <div class="top-rule"></div>
+    <div class="sign-badge">🚩 Sign 02</div>
+    <div class="chapter-title">They Criticize You<br/>(Disguised as "Help")</div>
+    <div class="sign-section">
+      <div class="section-heading">
+        <img class="section-icon" src="Untitled design (5).png"> What it looks like
+      </div>
+      <div class="body-text">Backhanded compliments, subtle jabs, "I'm just trying to help you." The feedback always leaves you feeling smaller than when you started.</div>
+    </div>
+    <div class="sign-section">
+      <div class="section-heading">
+        <img class="section-icon" src="Untitled design (6).png"> What it feels like
+      </div>
+      <div class="body-text">Insecure. Like you're never quite enough. You start second guessing yourself around them without understanding why.</div>
+    </div>
+    <div class="sign-section">
+      <div class="section-heading">
+        <img class="section-icon" src="Untitled design (7).png"> What it actually is
+      </div>
+      <div class="body-text">Tearing you down while pretending to build you up. It's control. And it works because it's wrapped in care.</div>
+    </div>
+    <div class="page-number">7</div>
+  </div>
+
+  <!-- PAGE 8: SIGN #3 -->
+  <div class="page">
+    <div class="top-rule"></div>
+    <div class="sign-badge">🚩 Sign 03</div>
+    <div class="chapter-title">They're Always<br/>the Victim</div>
+    <div class="sign-section">
+      <div class="section-heading">
+        <img class="section-icon" src="Untitled design (5).png"> What it looks like
+      </div>
+      <div class="body-text">Every story paints them as misunderstood or wronged. Their exes were crazy. Their boss is out to get them. Nobody appreciates them.</div>
+    </div>
+    <div class="sign-section">
+      <div class="section-heading">
+        <img class="section-icon" src="Untitled design (6).png"> What it feels like
+      </div>
+      <div class="body-text">You feel bad for them. You step into a caretaker role without realizing it. You start protecting them from a world that doesn't understand them.</div>
+    </div>
+    <div class="sign-section">
+      <div class="section-heading">
+        <img class="section-icon" src="Untitled design (7).png"> What it actually is
+      </div>
+      <div class="body-text">Emotional manipulation that assigns you a role. Fixer. Savior. Parent. The dynamic keeps you invested and keeps them unaccountable.</div>
+    </div>
+    <div class="page-number">8</div>
+  </div>
+
+  <!-- PAGE 9: SIGN #4 -->
+  <div class="page">
+    <div class="top-rule"></div>
+    <div class="sign-badge">🚩 Sign 04</div>
+    <div class="chapter-title">Fake Empathy</div>
+    <div class="sign-section">
+      <div class="section-heading">
+        <img class="section-icon" src="Untitled design (5).png"> What it looks like
+      </div>
+      <div class="body-text">They talk about how much they care. They mirror your emotions back at you. They seem to understand you in a way that feels almost too specific.</div>
+    </div>
+    <div class="sign-section">
+      <div class="section-heading">
+        <img class="section-icon" src="Untitled design (6).png"> What it feels like
+      </div>
+      <div class="body-text">"Wow, they really get me." That feeling of being deeply seen is intoxicating. It's usually what hooks you first and what you spend the rest of the relationship chasing.</div>
+    </div>
+    <div class="sign-section">
+      <div class="section-heading">
+        <img class="section-icon" src="Untitled design (7).png"> What it actually is
+      </div>
+      <div class="body-text">Performative empathy used to build trust and create dependency. They studied you. They're reflecting your own desires back at you.</div>
+    </div>
+    <div class="page-number">9</div>
+  </div>
+
+  <!-- PAGE 10: SIGN #5 -->
+  <div class="page">
+    <div class="top-rule"></div>
+    <div class="sign-badge">🚩 Sign 05</div>
+    <div class="chapter-title">They Argue to Win,<br/>Not Resolve</div>
+    <div class="sign-section">
+      <div class="section-heading">
+        <img class="section-icon" src="Untitled design (5).png"> What it looks like
+      </div>
+      <div class="body-text">Conversations turn into battles. Your character gets attacked. The original issue vanishes and suddenly you're defending yourself instead of the actual problem.</div>
+    </div>
+    <div class="sign-section">
+      <div class="section-heading">
+        <img class="section-icon" src="Untitled design (6).png"> What it feels like
+      </div>
+      <div class="body-text">Drained. Frustrated. Unheard. You came in with a real concern and left feeling like you were the problem the whole time.</div>
+    </div>
+    <div class="sign-section">
+      <div class="section-heading">
+        <img class="section-icon" src="Untitled design (7).png"> What it actually is
+      </div>
+      <div class="body-text">Control through dominance. Direct or passive. The goal is never resolution. The goal is making sure they come out on top.</div>
+    </div>
+    <div class="page-number">10</div>
+  </div>
+
+  <!-- PAGE 11: SIGN #6 -->
+  <div class="page">
+    <div class="top-rule"></div>
+    <div class="sign-badge">🚩 Sign 06</div>
+    <div class="chapter-title">Unrealistic Expectations</div>
+    <div class="sign-section">
+      <div class="section-heading">
+        <img class="section-icon" src="Untitled design (5).png"> What it looks like
+      </div>
+      <div class="body-text">You're expected to meet high, one sided standards they don't hold themselves to. And the bar keeps moving right when you think you've cleared it.</div>
+    </div>
+    <div class="sign-section">
+      <div class="section-heading">
+        <img class="section-icon" src="Untitled design (6).png"> What it feels like
+      </div>
+      <div class="body-text">You're constantly trying to get it right. Constantly adjusting. Constantly hoping this time will be the time you're finally enough.</div>
+    </div>
+    <div class="sign-section">
+      <div class="section-heading">
+        <img class="section-icon" src="Untitled design (7).png"> What it actually is
+      </div>
+      <div class="body-text">Conditional approval that keeps you chasing. When the bar is always moving, you can never fully arrive. That's the point.</div>
+    </div>
+    <div class="page-number">11</div>
+  </div>
+
+  <!-- PAGE 12: SIGN #7 -->
+  <div class="page">
+    <div class="top-rule"></div>
+    <div class="sign-badge">🚩 Sign 07</div>
+    <div class="chapter-title">You Start<br/>Questioning Yourself</div>
+    <div class="sign-section">
+      <div class="section-heading">
+        <img class="section-icon" src="Untitled design (5).png"> What it looks like
+      </div>
+      <div class="body-text">Denial. Twisting facts. Shifting blame. "That didn't happen." "You're too sensitive." "You always do this." Reality becomes something you can't quite trust.</div>
+    </div>
+    <div class="sign-section">
+      <div class="section-heading">
+        <img class="section-icon" src="Untitled design (6).png"> What it feels like
+      </div>
+      <div class="body-text">Confusion. Self doubt. You overthink everything and start wondering if you are the problem after all.</div>
+    </div>
+    <div class="sign-section">
+      <div class="section-heading">
+        <img class="section-icon" src="Untitled design (7).png"> What it actually is
+      </div>
+      <div class="body-text">Gaslighting. A pattern that slowly disconnects you from your own reality and makes you dependent on their version of events.</div>
+    </div>
+    <div class="page-number">12</div>
+  </div>
+
+  <!-- PAGE 13: SIGN #8 -->
+  <div class="page">
+    <div class="top-rule"></div>
+    <div class="sign-badge">🚩 Sign 08</div>
+    <div class="chapter-title">You're Giving More<br/>Than You're Getting</div>
+    <div class="sign-section">
+      <div class="section-heading">
+        <img class="section-icon" src="Untitled design (5).png"> What it looks like
+      </div>
+      <div class="body-text">You're fixing, chasing, holding things together. You're the one putting in the effort while they receive it like it's owed to them.</div>
+    </div>
+    <div class="sign-section">
+      <div class="section-heading">
+        <img class="section-icon" src="Untitled design (6).png"> What it feels like
+      </div>
+      <div class="body-text">Exhaustion. Imbalance. You keep telling yourself it'll even out. It doesn't. But you've already put in so much that walking away feels like losing.</div>
+    </div>
+    <div class="sign-section">
+      <div class="section-heading">
+        <img class="section-icon" src="Untitled design (7).png"> What it actually is
+      </div>
+      <div class="body-text">One sided emotional investment. Healthy relationships don't feel like this much work. If only one person is trying, that's your answer.</div>
+    </div>
+    <div class="page-number">13</div>
+  </div>
+
+  <!-- PAGE 14: THE SHIFT -->
+  <div class="page">
+    <div class="top-rule"></div>
+    <div class="chapter-label">If This Feels Familiar</div>
+    <div class="chapter-title">It's Not Random.</div>
+    <div class="body-text">If you saw yourself in multiple signs, this isn't just about "them."</div>
+    <div class="body-text">There's a pattern happening. And the reason it's so hard to walk away isn't because you're weak.</div>
+    <div class="body-text">It's because of how your brain gets wired under this kind of pressure.</div>
+    <div class="pull">
+      When someone gives you intense love, then pulls back, then gives it again... your brain starts producing dopamine on an unpredictable schedule. That's intermittent reinforcement. It's the same mechanism that makes gambling addictive. You keep going back because the reward is real. Just inconsistent.
+    </div>
+    <div class="body-text">That creates a trauma bond. Not love. A neurological attachment built through cycles of highs and lows.</div>
+    <div class="body-text">And here's what nobody says out loud: you didn't fall in love with that person. You fell in love with the version of them they showed you at the start. The one who made you feel seen, chosen, special.</div>
+    <div class="body-text">That version was a performance. And you've been chasing it ever since.</div>
+    <div class="page-number">14</div>
+  </div>
+
+  <!-- PAGE 15: CTA -->
+  <div class="page">
+    <div class="top-rule"></div>
+    <div class="chapter-label">What's Next</div>
+    <div class="chapter-title">Spotting It Is Step One.</div>
+    <div class="body-text">But if you keep going back...</div>
+    <div class="body-text">or you feel stuck on someone who treats you like this...</div>
+    <div class="body-text">then you're not just dealing with a person.</div>
+    <div class="body-text">You're dealing with a pattern. And patterns can be broken.</div>
+    <div class="tool-box">
+      <div class="tool-box-label">Ready to Break the Pattern?</div>
+      <div class="tool-box-text">I broke the entire cycle down in my guide. How the attachment forms, why it's so hard to leave, and how to actually get free.</div>
+      <a class="tool-box-link" href="https://averyhubert.com/shop/3a4c2aad-5bd2-4f7a-a6bd-39b699cf3672">averyhubert.com/shop → Break the Cycle</a>
+    </div>
+    <div class="page-number">15</div>
+  </div>
+
+  <!-- PAGE 16: QUICK SELF CHECK -->
+  <div class="page">
+    <div class="top-rule"></div>
+    <div class="chapter-label">Reality Check</div>
+    <div class="chapter-title">Quick Reality Check</div>
+    <div class="body-text">Answer honestly:</div>
+    <ul class="check-list">
+      <li>Did it feel perfect at the beginning?</li>
+      <li>Do they confuse you more than they reassure you?</li>
+      <li>Do you feel anxious more than calm?</li>
+      <li>Are you trying harder than they are?</li>
+      <li>Do you struggle to let go even when you know something's off?</li>
+    </ul>
+    <div class="pull">
+      If you said yes to 3 or more...<br/>
+      you're not imagining it.
+    </div>
+    <div class="page-number">16</div>
+  </div>
+
+</body>
+</html>

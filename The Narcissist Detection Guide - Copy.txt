@@ -1,0 +1,214 @@
+ So I'm going to give you a very rough spec doc for what we are trying to accomplish. We want to create a new HTML file, and we are going to convert it to a new PDF that      
+  will be a free resource that I can give to my users. I run a 100,000 follower Instagram account, and I want to give users a "How to Spot a Narcissist" guide, and that is     
+  what you are going to create.It will be called“The Narcissist Detection Guide: 8 signs youre missing." And I want you to help me create it. It should look very visually      
+  similar to the "Break the Cycle" HTML that we have created, as far as the colors and the font and stuff like that.  We're going to have different sections and icons and      
+  stuff like that that I want to add to it Like red flags, where relevant. I want you to take a look at this document that I'm sending you here. I want you to realize that     
+  when I am sending you the page numbers, those page numbers are just a guide so you know what section comes after another. It doesn't actually need to meet those page number  
+  requirements. It could be less or more pages. Let's make this look beautiful, and ask me any questions that you have before starting.
+
+PAGE 1 — THE HOOK (FULL BLEED, MINIMAL TEXT)
+Headline:
+
+You don’t overlook narcissists because you’re stupid.
+You overlook them because they show up as everything you’ve been missing.
+
+Body:
+
+They don’t come off toxic in the beginning.
+
+They come off perfect.
+
+Attentive. Interested. Almost too good to be true.
+
+They create a version of themselves that feels like everything you’ve been looking for.
+
+And you don’t fall for them.
+
+You fall for the fantasy they built for you.
+
+By the time something feels off…
+you’re already emotionally involved.
+
+Already attached.
+
+Already trying to make it make sense.
+
+🔥 Design note:
+
+Large text, lots of spacing
+This should feel like a “punch in the chest” page
+🧩 PAGE 2 — THE REFRAME
+Headline:
+
+Narcissists Don’t Look the Way You Think They Do.
+
+Body:
+
+You expect them to be loud.
+Arrogant. Self-obsessed.
+
+Some are.
+
+But the ones that actually hook you?
+
+They’re subtle.
+
+They study you.
+
+They mirror you.
+
+They become exactly what you were looking for.
+
+And they’ve mastered the art of looking like the good person…
+while slowly making you feel like the problem.
+
+🔥 Design note:
+
+Keep it clean, almost poetic
+This page builds trust + curiosity
+🧩 PAGE 3 — DISCLAIMER / CONTEXT
+Headline:
+
+Let’s Be Clear About One Thing.
+
+Body:
+
+Not every self-centered person is a narcissist.
+
+True narcissistic personality disorder is rare.
+
+But the traits you’re about to read?
+
+Those are the patterns that create confusion, anxiety, and emotional attachment in unhealthy relationships.
+
+And whether someone has NPD or not…
+
+If they consistently show these behaviors,
+it’s something you should pay attention to, and likely avoid.
+
+🔥 Purpose:
+
+Builds credibility
+Prevents backlash
+Keeps authority
+🧩 PAGE 4–7 — THE CORE (RED FLAGS)
+Section Header:
+
+8 Signs You Might Be Dealing With a Narcissistic Personality
+
+
+🚩 SIGN #1 — They Need Admiration (Subtle or Obvious)
+What it looks like:
+Talking about achievements, needing validation, fishing for praise
+What it feels like:
+You feel like you’re supposed to admire them, validate them, lift them up
+What it actually is:
+A constant need for validation and pedestalization—whether loud (grandiose) or subtle (covert)
+🚩 SIGN #2 — They Criticize You (Disguised as “Help”)
+What it looks like:
+Backhanded compliments, subtle jabs, “I’m just trying to help you”
+What it feels like:
+You feel smaller, insecure, like you’re not enough
+What it actually is:
+Tearing you down while pretending to build you up
+🚩 SIGN #3 — They’re Always the Victim
+What it looks like:
+Every story paints them as misunderstood or wronged
+What it feels like:
+You feel bad for them, you step into a caretaker role
+What it actually is:
+Emotional manipulation that assigns you a role (fixer, savior, parent)
+🚩 SIGN #4 — Fake Empathy
+What it looks like:
+Talking about how much they “care,” mirroring your emotions
+What it feels like:
+“Wow, they really understand me”
+What it actually is:
+Performative empathy used to build trust and control
+🚩 SIGN #5 — They Argue to Win, Not Resolve
+What it looks like:
+Turning conversations into battles, attacking your character
+What it feels like:
+Drained, frustrated, unheard
+What it actually is:
+Control through dominance (direct or passive)
+🚩 SIGN #6 — Unrealistic Expectations
+What it looks like:
+You’re expected to meet high, one-sided standards
+What it feels like:
+You’re constantly trying to “get it right”
+What it actually is:
+Conditional approval that keeps you chasing
+🚩 SIGN #7 — You Start Questioning Yourself
+What it looks like:
+Denial, twisting facts, shifting blame
+What it feels like:
+Confusion, self-doubt, overthinking
+What it actually is:
+Gaslighting that disconnects you from your own reality
+🚩 SIGN #8 — You’re Giving More Than You’re Getting
+What it looks like:
+You’re fixing, chasing, holding things together
+What it feels like:
+Exhaustion, imbalance
+What it actually is:
+One-sided emotional investment
+🧩 PAGE 8 — THE SHIFT (TRANSITION)
+Headline:
+
+If This Feels Familiar… It’s Not Random.
+
+Body:
+
+If you saw yourself in multiple signs…
+
+This isn’t just about “them.”
+
+There’s a pattern happening.
+
+And the reason it’s so hard to walk away
+isn’t because you’re weak…
+
+it’s because you’ve been pulled into a cycle.
+
+A cycle that creates emotional highs, lows, and attachment.
+
+We should have a brief area where we talk about trauma bonding, emotional addiction, Intermittent reinforcement. Talk about how the person did not fall in love with the person they were talking to. They fell in love with the fantasy that person created. 
+
+🔥 This is where your paid product naturally fits
+
+
+🧩 PAGE 9 — CTA (CLEAN + STRONG)
+Headline:
+
+Spotting It Is Step One.
+
+Body:
+
+But if you keep going back…
+or you feel stuck on someone who treats you like this…
+
+then you’re not just dealing with a person—
+you’re dealing with a pattern.
+
+I broke that entire pattern down here:
+👉 [https://averyhubert.com/shop/3a4c2aad-5bd2-4f7a-a6bd-39b699cf3672]
+
+🧩 PAGE 10 — BONUS: QUICK SELF-CHECK
+Headline:
+
+Quick Reality Check
+
+Answer honestly:
+
+Did it feel perfect at the beginning?
+Do they confuse you more than they reassure you?
+Do you feel anxious more than calm?
+Are you trying harder than they are?
+Do you struggle to let go even when you know something’s off?
+Closer:
+
+If you said yes to 3 or more…
+you’re not imagining it.
+
+
